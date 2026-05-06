@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consumer Protection Field Guide — UA Law</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#0f1f3d; --navy-mid:#1a3260; --gold:#c8963a; --gold-light:#e8b86d;
+  --red:#c0392b; --red-light:#f9ecea;
+  --green:#1a6b3c; --green-light:#eaf4ee;
+  --blue:#1558a0; --blue-light:#e8f0fb;
+  --amber:#8a5a00; --amber-light:#fdf3e0;
+  --purple:#5b2d8e; --purple-light:#f0eaf8;
+  --gray-100:#f8f7f5; --gray-200:#eeecea; --gray-300:#d8d5d0;
+  --gray-500:#8c887f; --gray-700:#4a4540; --gray-900:#1c1814;
+  --sw:264px;
+  --fh:'Playfair Display',Georgia,serif;
+  --fb:'IBM Plex Sans',system-ui,sans-serif;
+  --fm:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);background:var(--gray-100);color:var(--gray-900);line-height:1.7;display:flex;min-height:100vh}
+
+/* ── Sidebar ── */
+#sb{width:var(--sw);background:var(--navy);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;display:flex;flex-direction:column;z-index:100}
+.sb-head{padding:26px 22px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.sb-logo{font-family:var(--fm);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.sb-title{font-family:var(--fh);font-size:17px;color:#fff;line-height:1.3}
+.sb-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:3px}
+.sb-search{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
+.sb-search input{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:5px;color:#fff;font-family:var(--fb);font-size:12px;padding:7px 10px;outline:none}
+.sb-search input::placeholder{color:rgba(255,255,255,.3)}
+.sb-search input:focus{border-color:var(--gold)}
+.sb-nav{padding:10px 0;flex:1}
+.nl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);font-weight:600;padding:14px 22px 5px}
+.ni{display:block;padding:7px 22px;font-size:12.5px;color:rgba(255,255,255,.55);text-decoration:none;cursor:pointer;border-left:2px solid transparent;transition:all .15s}
+.ni:hover{color:#fff;background:rgba(255,255,255,.04)}
+.ni.active{color:var(--gold-light);border-left-color:var(--gold);background:rgba(200,150,58,.08)}
+.ni .c{font-family:var(--fm);font-size:10px;opacity:.5;display:block;margin-top:1px}
+.sb-foot{padding:14px 22px;border-top:1px solid rgba(255,255,255,.08);font-size:11px;color:rgba(255,255,255,.22)}
+
+/* ── Main ── */
+#main{margin-left:var(--sw);flex:1;min-height:100vh}
+.topbar{background:var(--navy);padding:14px 44px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.06)}
+.topbar-bc{font-size:12px;color:rgba(255,255,255,.45);font-family:var(--fm)}
+.topbar-bc span{color:var(--gold-light)}
+.topbar-meta{font-size:11px;color:rgba(255,255,255,.28)}
+.content{max-width:820px;margin:0 auto;padding:50px 44px 80px}
+
+/* ── Pages ── */
+.page{display:none}
+.page.active{display:block}
+
+/* ── Type ── */
+.eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.pg-title{font-family:var(--fh);font-size:32px;font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:10px}
+.pg-sub{font-size:14.5px;color:var(--gray-500);margin-bottom:34px;padding-bottom:26px;border-bottom:1px solid var(--gray-300)}
+h2{font-family:var(--fh);font-size:21px;color:var(--navy);margin:38px 0 13px;padding-bottom:8px;border-bottom:1px solid var(--gray-200)}
+h3{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-700);margin:24px 0 9px}
+p{font-size:14px;color:var(--gray-700);margin-bottom:12px}
+
+/* ── Stats ── */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+.stat{background:var(--navy);border-radius:9px;padding:16px 18px;text-align:center}
+.stat .v{font-family:var(--fh);font-size:26px;color:var(--gold-light);display:block}
+.stat .l{font-size:11px;color:rgba(255,255,255,.45);margin-top:3px}
+
+/* ── Alert ── */
+.alert{border-radius:8px;padding:13px 16px;margin:14px 0;display:flex;gap:11px;align-items:flex-start}
+.alert-i{font-size:14px;flex-shrink:0;margin-top:1px}
+.alert p{margin:0;font-size:13.5px}
+.alert strong{font-weight:600}
+.alert.danger{background:var(--red-light);color:var(--red);border-left:3px solid var(--red)}
+.alert.info{background:var(--blue-light);color:var(--blue);border-left:3px solid var(--blue)}
+.alert.warn{background:var(--amber-light);color:var(--amber);border-left:3px solid var(--amber)}
+.alert.success{background:var(--green-light);color:var(--green);border-left:3px solid var(--green)}
+.alert.purple{background:var(--purple-light);color:var(--purple);border-left:3px solid var(--purple)}
+
+/* ── Rule cards ── */
+.rc{background:#fff;border:1px solid var(--gray-200);border-radius:9px;margin-bottom:10px;overflow:hidden}
+.rc-h{padding:13px 16px;display:flex;align-items:center;gap:11px;cursor:pointer;user-select:none}
+.rc-h:hover{background:var(--gray-100)}
+.rc-ico{width:26px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.rc-ico.bad{background:var(--red-light);color:var(--red)}
+.rc-ico.good{background:var(--green-light);color:var(--green)}
+.rc-ico.req{background:var(--blue-light);color:var(--blue)}
+.rc-ico.warn{background:var(--amber-light);color:var(--amber)}
+.rc-title{font-size:13.5px;font-weight:500;color:var(--gray-900);flex:1}
+.rc-tog{font-size:16px;color:var(--gray-300);transition:transform .2s}
+.rc.open .rc-tog{transform:rotate(180deg)}
+.rc-body{display:none;padding:0 16px 14px 53px}
+.rc.open .rc-body{display:block}
+.rc-body p{font-size:13px}
+.cite-block{font-family:var(--fm);font-size:11.5px;background:var(--gray-100);border-left:3px solid var(--gray-300);padding:9px 13px;margin:9px 0;color:var(--gray-700);border-radius:0 5px 5px 0;line-height:1.65}
+
+/* ── Tables ── */
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px}
+th{background:var(--navy);color:rgba(255,255,255,.75);padding:9px 13px;text-align:left;font-weight:500;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+td{padding:9px 13px;border-bottom:1px solid var(--gray-200);vertical-align:top;color:var(--gray-700)}
+tr:nth-child(even) td{background:var(--gray-100)}
+.badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:4px}
+.badge.red{background:var(--red-light);color:var(--red)}
+.badge.green{background:var(--green-light);color:var(--green)}
+.badge.amber{background:var(--amber-light);color:var(--amber)}
+.badge.blue{background:var(--blue-light);color:var(--blue)}
+
+/* ── Statute block ── */
+.statute{background:var(--navy);border-radius:9px;padding:22px 26px;margin:18px 0}
+.statute .s-ey{font-family:var(--fm);font-size:10px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px}
+.statute .s-txt{font-size:13px;color:rgba(255,255,255,.72);line-height:1.8;font-style:italic}
+.statute .s-txt strong{color:var(--gold-light);font-style:normal;font-weight:500}
+
+/* ── Subsections ── */
+.sub{border:1px solid var(--gray-200);border-radius:9px;margin:14px 0;overflow:hidden}
+.sub-h{background:var(--gray-100);padding:11px 16px;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--gray-200)}
+.sub-code{font-family:var(--fm);font-size:10px;color:var(--navy);font-weight:500;background:var(--gray-200);padding:2px 7px;border-radius:3px;flex-shrink:0}
+.sub-name{font-size:13px;font-weight:600;color:var(--navy)}
+.sub-body{padding:14px 16px}
+.sub-body p{font-size:13px}
+.nlist{list-style:none;margin:10px 0;counter-reset:item}
+.nlist li{counter-increment:item;display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--gray-200);font-size:13px;color:var(--gray-700);align-items:flex-start}
+.nlist li:last-child{border-bottom:none}
+.nlist li::before{content:"("counter(item)")";font-family:var(--fm);font-size:10px;color:var(--navy);font-weight:500;flex-shrink:0;margin-top:2px;background:var(--blue-light);padding:1px 5px;border-radius:3px}
+
+/* ── Checklist ── */
+.ck{list-style:none;margin:14px 0}
+.ck li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--gray-200);font-size:13.5px;color:var(--gray-700);align-items:flex-start}
+.ck li:last-child{border-bottom:none}
+.ck li::before{content:'□';font-size:15px;color:var(--gray-300);flex-shrink:0;margin-top:-1px}
+
+/* ── Evidence list ── */
+.ev-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.ev-item{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.ev-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px}
+.ev-txt{font-size:13px;color:var(--gray-700);line-height:1.55}
+.ev-txt strong{color:var(--navy);font-weight:500}
+
+/* ── Coverage matrix ── */
+.matrix{margin:18px 0;border-radius:10px;overflow:hidden;border:1px solid var(--gray-200)}
+.matrix-head{display:grid;grid-template-columns:1fr 100px 100px 100px;background:var(--navy);padding:11px 18px;gap:0}
+.matrix-head div{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.matrix-head div:first-child{color:rgba(255,255,255,.5)}
+.matrix-head div.hl{color:var(--gold)}
+.matrix-row{display:grid;grid-template-columns:1fr 100px 100px 100px;border-top:1px solid var(--gray-200);align-items:stretch}
+.matrix-row:nth-child(odd){background:#fff}
+.matrix-row:nth-child(even){background:var(--gray-100)}
+.matrix-cell{padding:13px 18px}
+.matrix-cell.center{display:flex;flex-direction:column;align-items:center;justify-content:center;border-left:1px solid var(--gray-200);padding:10px 6px;gap:3px}
+.m-ico{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+.m-ico.yes{background:var(--green-light);color:var(--green)}
+.m-ico.no{background:var(--red-light);color:var(--red)}
+.m-ico.maybe{background:var(--amber-light);color:var(--amber)}
+.m-lbl{font-size:9px;font-weight:600;text-align:center;line-height:1.3}
+.m-lbl.yes{color:var(--green)}
+.m-lbl.no{color:var(--red)}
+.m-lbl.maybe{color:var(--amber)}
+.matrix-cell .ct{font-size:13.5px;font-weight:500;color:var(--navy);margin-bottom:3px}
+.matrix-cell .cd{font-size:12px;color:var(--gray-500)}
+
+/* ── Timeline ── */
+.timeline{margin:22px 0;position:relative}
+.timeline::before{content:'';position:absolute;left:17px;top:0;bottom:0;width:2px;background:var(--gray-200)}
+.tl-item{display:flex;gap:18px;margin-bottom:18px;position:relative}
+.tl-dot{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;font-family:var(--fm);z-index:1}
+.tl-dot.d0{background:var(--navy);color:var(--gold-light)}
+.tl-dot.d5{background:var(--red);color:#fff}
+.tl-dot.d30{background:var(--blue);color:#fff}
+.tl-dot.da{background:var(--green);color:#fff}
+.tl-body{flex:1;padding-top:5px}
+.tl-lbl{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--gray-500);margin-bottom:3px}
+.tl-txt{font-size:13px;color:var(--gray-700);line-height:1.6}
+
+/* ── Key box ── */
+.keybox{border:2px solid var(--navy);border-radius:9px;padding:18px 22px;margin:22px 0;display:flex;gap:14px;align-items:flex-start}
+.keybox-icon{font-size:22px;flex-shrink:0;margin-top:1px}
+.keybox-body .keybox-title{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);margin-bottom:5px}
+.keybox-body p{font-size:13.5px;margin:0}
+
+/* ── Callout highlight ── */
+.hero-callout{background:var(--navy);border-radius:11px;padding:26px 30px;margin:26px 0}
+.hero-callout .hc-ey{font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hero-callout .hc-title{font-family:var(--fh);font-size:22px;color:#fff;line-height:1.35;margin-bottom:10px}
+.hero-callout .hc-body{font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.75}
+.hero-callout .hc-body strong{color:rgba(255,255,255,.9)}
+
+/* ── Revocation script ── */
+.script-box{background:#fff;border:1.5px solid var(--navy);border-radius:9px;padding:20px 22px;margin:16px 0}
+.script-box .s-label{font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:10px;font-weight:500}
+.script-box .s-text{font-size:13.5px;color:var(--gray-900);line-height:1.75;font-style:italic;border-left:3px solid var(--gold);padding-left:14px}
+
+/* ── FCRA intra-page tabs ── */
+.ft-nav{display:flex;gap:0;border-bottom:2px solid var(--gray-200);margin-bottom:28px;overflow-x:auto}
+.ft-tab{font-size:12px;font-weight:500;padding:10px 16px;cursor:pointer;color:var(--gray-500);border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .15s;font-family:var(--fb)}
+.ft-tab:hover{color:var(--navy)}
+.ft-tab.active{color:var(--navy);border-bottom-color:var(--gold);font-weight:600}
+.ft-pane{display:none}
+.ft-pane.active{display:block}
+.actor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+.actor-card{border-radius:10px;padding:18px 16px;cursor:pointer;transition:transform .15s,box-shadow .15s;border:2px solid transparent}
+.actor-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.actor-card.navy{background:var(--navy);border-color:var(--navy)}
+.actor-card.blue{background:var(--blue-light);border-color:var(--blue)}
+.actor-card.green{background:var(--green-light);border-color:var(--green)}
+.actor-card .ac-ico{font-size:22px;margin-bottom:8px}
+.actor-card .ac-title{font-weight:600;font-size:13px;margin-bottom:4px}
+.actor-card.navy .ac-title{color:var(--gold-light)}
+.actor-card.blue .ac-title{color:var(--blue)}
+.actor-card.green .ac-title{color:var(--green)}
+.actor-card .ac-sub{font-size:11.5px;line-height:1.5}
+.actor-card.navy .ac-sub{color:rgba(255,255,255,.55)}
+.actor-card.blue .ac-sub{color:var(--blue)}
+.actor-card.green .ac-sub{color:var(--green)}
+.dispute-flow{display:flex;align-items:center;gap:0;margin:22px 0;flex-wrap:wrap}
+.df-node{background:#fff;border:1.5px solid var(--gray-200);border-radius:9px;padding:13px 16px;flex:1;min-width:130px}
+.df-node .dn-label{font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500);margin-bottom:4px}
+.df-node .dn-name{font-size:13px;font-weight:600;color:var(--navy)}
+.df-node .dn-sub{font-size:11px;color:var(--gray-500);margin-top:3px}
+.df-arrow{font-size:20px;color:var(--gold);padding:0 6px;flex-shrink:0}
+.df-arrow .da-lbl{font-size:9px;font-family:var(--fm);color:var(--gray-500);text-align:center;display:block;margin-top:-2px}
+.obligation-row{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--gray-200)}
+.obligation-row:last-child{border-bottom:none}
+.ob-num{font-family:var(--fm);font-size:10px;font-weight:600;background:var(--navy);color:var(--gold-light);width:24px;height:24px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.ob-body .ob-title{font-size:13.5px;font-weight:500;color:var(--gray-900);margin-bottom:3px}
+.ob-body .ob-detail{font-size:12.5px;color:var(--gray-600);line-height:1.55}
+.ob-timer{font-family:var(--fm);font-size:10px;font-weight:600;background:var(--amber-light);color:var(--amber);padding:2px 7px;border-radius:4px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.col-card{background:#fff;border:1px solid var(--gray-200);border-radius:9px;padding:16px 18px}
+.col-card .cc-head{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--gray-200)}
+.col-card.willful .cc-head{color:var(--red)}
+.col-card.negligent .cc-head{color:var(--amber)}
+.col-card ul{list-style:none;margin:0}
+.col-card ul li{font-size:13px;color:var(--gray-700);padding:5px 0;border-bottom:1px solid var(--gray-200);display:flex;gap:8px;align-items:flex-start}
+.col-card ul li:last-child{border-bottom:none}
+.col-card ul li::before{content:'→';color:var(--gold);font-weight:700;flex-shrink:0}
+
+/* ── Print ── */
+@media print{
+  #sb{display:none}
+  #main{margin-left:0}
+  .topbar{display:none}
+  .page{display:block!important}
+  .rc-body{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ SIDEBAR ══════════ -->
+<nav id="sb">
+  <div class="sb-head">
+    <div class="sb-logo">UA Law</div>
+    <div class="sb-title">Consumer Protection Field Guide</div>
+    <div class="sb-sub">Team Training Reference · v1.0</div>
+  </div>
+  <div class="sb-search">
+    <input type="text" placeholder="Search (press /)..." id="srch">
+  </div>
+  <div class="sb-nav">
+    <div class="nl">Start here</div>
+    <a class="ni active" onclick="go('tcpa',this)">TCPA Overview<span class="c">47 U.S.C. §227 · Page 1</span></a>
+
+    <div class="nl">FDCPA — 15 U.S.C. §1692</div>
+    <a class="ni" onclick="go('fdcpa-overview',this)">FDCPA Overview<span class="c">§1692</span></a>
+    <a class="ni" onclick="go('mirroring',this)">Mirroring States<span class="c">State-level overlays</span></a>
+    <a class="ni" onclick="go('fdcpa-who',this)">Who Is Covered<span class="c">§1692a Definitions</span></a>
+    <a class="ni" onclick="go('fdcpa-comms',this)">Communication Rules<span class="c">§1692b–c</span></a>
+    <a class="ni" onclick="go('fdcpa-prohibited',this)">Prohibited Practices<span class="c">§1692d–f</span></a>
+    <a class="ni" onclick="go('fdcpa-validation',this)">Validation of Debts<span class="c">§1692g ★</span></a>
+    <a class="ni" onclick="go('fdcpa-damages',this)">Remedies &amp; Damages<span class="c">§1692k</span></a>
+
+    <div class="nl">FCRA — 15 U.S.C. §1681</div>
+    <a class="ni" onclick="go('fcra',this)">FCRA Overview<span class="c">§1681 · Three-party framework</span></a>
+
+    <div class="nl">Internal</div>
+    <a class="ni" onclick="go('intake',this)">UA Law Intake Checklist<span class="c">Internal · Green/Yellow/Red triage</span></a>
+  </div>
+  <div class="sb-foot">Updated May 2026 · UA Law Training · v2.0</div>
+</nav>
+
+<!-- ══════════ MAIN ══════════ -->
+<div id="main">
+  <div class="topbar">
+    <div class="topbar-bc">Consumer Protection Field Guide / <span id="bc">TCPA Overview</span></div>
+    <div class="topbar-meta">47 U.S.C. §227 · 15 U.S.C. §§1692–1692p</div>
+  </div>
+  <div class="content">
+
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE 1: TCPA OVERVIEW
+═══════════════════════════════════════════════════════ -->
+<div id="page-tcpa" class="page active">
+  <div class="eyebrow">Page 1 — Start Here</div>
+  <div class="pg-title">Telephone Consumer Protection Act</div>
+  <div class="pg-sub">47 U.S.C. §227 · The TCPA is different from the FDCPA. The FDCPA is about <em>who</em> is collecting the debt. The TCPA is about <em>how</em> they are contacting the consumer. This distinction changes everything about who we can go after.</div>
+
+  <div class="stats">
+    <div class="stat"><span class="v">$500</span><span class="l">Per call / text violation</span></div>
+    <div class="stat"><span class="v">$1,500</span><span class="l">Per willful violation</span></div>
+    <div class="stat"><span class="v">No cap</span><span class="l">Damages stack per call</span></div>
+  </div>
+
+  <!-- THE BIG DISTINCTION -->
+  <div class="hero-callout">
+    <div class="hc-ey">The single most important thing to understand</div>
+    <div class="hc-title">TCPA is not just for third-party debt collectors.</div>
+    <div class="hc-body">The FDCPA only reaches third-party collectors. The TCPA can apply to <strong>original creditors, third-party collectors, debt buyers, collection law firms, vendors, call centers, servicers, and anyone calling or texting on their behalf</strong> — if they use covered technology without valid consent or after consent has been revoked. The statute restricts calls and texts using an automatic telephone dialing system (ATDS), artificial voice, or prerecorded voice. <strong>TCPA applies based on technology + consent. Not collector status.</strong></div>
+  </div>
+
+  <!-- WHAT TRIGGERS TCPA -->
+  <h2>What triggers TCPA coverage</h2>
+  <p>The TCPA does not regulate all calls. It regulates the <strong>technology</strong> used to place them. Two independent triggers exist — either is sufficient:</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0">
+    <div style="background:#fff;border:1px solid var(--gray-200);border-radius:9px;padding:16px 18px">
+      <div style="font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">Trigger 1</div>
+      <div style="font-size:14px;font-weight:500;color:var(--navy);margin-bottom:8px">Automated Telephone Dialing System (ATDS)</div>
+      <p>Equipment with the capacity to store or produce telephone numbers using a random or sequential number generator and to dial those numbers automatically. After <em>Facebook v. Duguid</em>, predictive dialers, CRM dialers, and campaign platforms are <strong>not automatically ATDS systems</strong> — we need facts showing random or sequential number generation, or a separate prerecorded/artificial voice theory. Use dialer technology as a trigger to investigate further, not as proof of TCPA liability by itself.</p>
+      <div style="margin-top:10px;font-size:12px;color:var(--gray-500);font-style:italic;line-height:1.6">Signs your client is being called by an ATDS: dead air or delay before anyone speaks, identical robotic opener on every call, multiple calls per day from the same number, calls resume immediately after hanging up.</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-200);border-radius:9px;padding:16px 18px">
+      <div style="font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">Trigger 2</div>
+      <div style="font-size:14px;font-weight:500;color:var(--navy);margin-bottom:8px">Prerecorded or Artificial Voice</div>
+      <p>Any call or voicemail using a prerecorded message or AI-generated voice. The FCC ruled in February 2024 that AI-generated voices on robocalls qualify as "artificial or prerecorded voice" under the TCPA — closing a potential loophole.</p>
+      <div style="margin-top:10px;font-size:12px;color:var(--gray-500);font-style:italic;line-height:1.6">This trigger does not require an ATDS. A manually dialed call with a prerecorded message or AI voice still violates the TCPA. The technology in the message matters, not just the dialing method.</div>
+    </div>
+  </div>
+
+  <div class="alert warn">
+    <div class="alert-i">⚠</div>
+    <p><strong>The Facebook v. Duguid limitation (2021):</strong> The Supreme Court narrowed the ATDS definition — equipment must use a random or sequential number generator to qualify. This means "they called me" is no longer enough. We need evidence of the specific technology used. Manual human calls are a much weaker TCPA claim. The prerecorded/artificial voice trigger is separate and unaffected by Duguid.</p>
+  </div>
+
+  <!-- COVERAGE MATRIX -->
+  <h2>Who TCPA covers — and how it differs from FDCPA</h2>
+  <p>This is the framework your team must know. The FDCPA column shows where that law stops. The TCPA column shows our reach beyond it. The Rosenthal column shows the California layer that fills remaining gaps.</p>
+
+  <div class="matrix">
+    <div class="matrix-head">
+      <div>Caller type</div>
+      <div class="center">FDCPA</div>
+      <div class="center hl">TCPA</div>
+      <div class="center hl">Rosenthal</div>
+    </div>
+
+    <div class="matrix-row">
+      <div class="matrix-cell">
+        <div class="ct">Original creditor</div>
+        <div class="cd">Chase, Capital One, Synchrony calling their own account under their own name</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico no">✗</div>
+        <div class="m-lbl no">Usually not covered</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">Covered if ATDS or prerecorded</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">CA — covers conduct too</div>
+      </div>
+    </div>
+
+    <div class="matrix-row">
+      <div class="matrix-cell">
+        <div class="ct">Third-party debt collector</div>
+        <div class="cd">Collection agencies hired by the creditor. Encore, Midland, etc.</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">FDCPA covered</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">Covered if ATDS or prerecorded</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">CA covered</div>
+      </div>
+    </div>
+
+    <div class="matrix-row">
+      <div class="matrix-cell">
+        <div class="ct">Collection law firm</div>
+        <div class="cd">Attorneys whose principal business is debt collection</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">FDCPA covered</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">Covered if ATDS or prerecorded</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">CA covered</div>
+      </div>
+    </div>
+
+    <div class="matrix-row">
+      <div class="matrix-cell">
+        <div class="ct">Debt buyer</div>
+        <div class="cd">Purchased the debt. Portfolio Recovery, LVNV, Midland Credit, etc.</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">FDCPA covered</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">Covered if ATDS or prerecorded</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">CA covered</div>
+      </div>
+    </div>
+
+    <div class="matrix-row">
+      <div class="matrix-cell">
+        <div class="ct">Creditor's vendor / call center / dialer platform</div>
+        <div class="cd">Third-party calling on behalf of the creditor or collector</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico maybe">?</div>
+        <div class="m-lbl maybe">Depends on facts</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">Covered — vicarious liability</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico maybe">?</div>
+        <div class="m-lbl maybe">Depends on facts</div>
+      </div>
+    </div>
+
+    <div class="matrix-row">
+      <div class="matrix-cell">
+        <div class="ct">Original creditor using another name</div>
+        <div class="cd">Subsidiary or trade name implying a third party is collecting</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico maybe">?</div>
+        <div class="m-lbl maybe">Possible FDCPA</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">Covered if ATDS or prerecorded</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">CA covered</div>
+      </div>
+    </div>
+
+    <div class="matrix-row">
+      <div class="matrix-cell">
+        <div class="ct">Manual human call — no automation</div>
+        <div class="cd">Live agent, manually dialed, no prerecorded message or AI voice</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico maybe">~</div>
+        <div class="m-lbl maybe">Conduct-based only</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico no">✗</div>
+        <div class="m-lbl no">Weak or no TCPA claim</div>
+      </div>
+      <div class="matrix-cell center">
+        <div class="m-ico yes">✓</div>
+        <div class="m-lbl yes">CA conduct covered</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VICARIOUS LIABILITY -->
+  <h2>Vicarious liability — going after the creditor for their vendor's calls</h2>
+  <p>This is one of the most powerful TCPA theories and one that teams often miss. A creditor or collector can be held liable for TCPA violations committed by their third-party call centers and dialer vendors if they <strong>directed, controlled, or ratified</strong> the calling conduct. The FCC has confirmed this framework.</p>
+
+  <div class="alert info">
+    <div class="alert-i">ℹ</div>
+    <p><strong>What this means in practice:</strong> Even if a third-party offshore call center physically dialed your client, the original creditor who hired and directed that call center can be the named defendant. The creditor's contract with the vendor, call scripts provided, and supervision of the program all go to the control question. Don't dismiss a case just because the caller ID shows an unfamiliar vendor name — follow it up the chain.</p>
+  </div>
+
+  <!-- CONSENT SECTION -->
+  <h2>The consent framework — how violations are created</h2>
+  <p>TCPA liability almost always comes down to two questions: did the caller have valid consent, and was it properly revoked? Your team needs to understand both sides.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0">
+    <div style="background:#fff;border:1px solid var(--gray-200);border-radius:9px;padding:16px 18px">
+      <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--green);margin-bottom:9px">How consent is established</div>
+      <p>When a consumer provides their cell number on the original credit application or account agreement, courts treat that as <strong>prior express consent</strong> for autodialed calls related to that account. This is the creditor's primary defense for early collection calls — and why the revocation step is so critical to create violations.</p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--gray-200);border-radius:9px;padding:16px 18px">
+      <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:9px">Consent chain after debt sale — treat as a discovery issue</div>
+      <p>Do not assume consent is broken when debt is sold or assigned. Consent given to the original creditor may extend to vendors or collectors calling on that creditor's behalf. For debt buyers, assignees, servicers, or later collection agencies, the question is fact-specific: who obtained consent, what did the consumer authorize, who is calling, for whose account, and was consent later revoked? <strong>Treat the consent chain as a discovery issue</strong> — not an automatic violation. The cleaner hook is documented revocation, not assumed chain-breakage.</p>
+    </div>
+  </div>
+
+  <!-- REVOCATION -->
+  <h2>The key TCPA trigger: consent revocation</h2>
+  <p>A consumer may revoke consent through <strong>any reasonable method</strong> that clearly expresses they do not want further calls or texts. Current FCC rules require revocation requests to be honored within a reasonable time — not to exceed 10 business days. Every covered autodialed, prerecorded, artificial voice, or robotext contact after valid revocation <em>and after any applicable processing window</em> may become a standalone TCPA violation. Do not teach the team that the very first call after revocation is automatically a violation — document the date of revocation, confirm the processing window, and count from there.</p>
+
+  <div class="alert danger">
+    <div class="alert-i">⚠</div>
+    <p><strong>TCPA vs. FDCPA revocation — a critical operational difference:</strong> Under the FDCPA, a cease-communication request must be <em>in writing</em> to trigger §1692c obligations. Under the TCPA, an <em>oral</em> "stop calling me" on a recorded line is sufficient to revoke consent. If your client told a collector on a call to stop calling — and they kept calling with an autodialer — TCPA violations are already accruing. Document the date of that conversation.</p>
+  </div>
+
+  <p>The goal is not just to stop the calls. The goal is to create a <strong>clear, documented record</strong> of revocation so that every subsequent autodialed contact becomes a provable violation. Use this language in your revocation notice:</p>
+
+  <div class="script-box">
+    <div class="s-label">Model revocation language — include in attorney representation letter</div>
+    <div class="s-text">"I revoke any and all consent — express or implied — for you, your agents, vendors, affiliates, servicers, or anyone calling or texting on your behalf to call or text my cell phone using an autodialer, automated system, prerecorded voice, artificial voice, AI voice, predictive dialer, or any automated texting system. Do not call or text this number except as legally permitted. This revocation applies to this number and any other number associated with this client file unless specifically authorized in writing by counsel."</div>
+  </div>
+
+  <!-- EVIDENCE CHECKLIST -->
+  <h2>Evidence we need — not just "they called"</h2>
+  <p>After <em>Facebook v. Duguid</em>, we cannot rely on call volume alone to establish ATDS use. We need to identify the specific technology. Ask clients about every one of these:</p>
+
+  <div class="ev-grid">
+    <div class="ev-item"><div class="ev-dot"></div><div class="ev-txt"><strong>Was it a robocall?</strong> Dead air or pause before anyone spoke?</div></div>
+    <div class="ev-item"><div class="ev-dot"></div><div class="ev-txt"><strong>Prerecorded voicemail?</strong> Same exact message left every time?</div></div>
+    <div class="ev-item"><div class="ev-dot"></div><div class="ev-txt"><strong>Automated or AI voice?</strong> Did it sound robotic, unnaturally smooth, or scripted?</div></div>
+    <div class="ev-item"><div class="ev-dot"></div><div class="ev-txt"><strong>Automated texts?</strong> Short-code texts, instant responses, identical message strings?</div></div>
+    <div class="ev-item"><div class="ev-dot"></div><div class="ev-txt"><strong>Did client revoke consent?</strong> When, how, and to whom? Verbal or written?</div></div>
+    <div class="ev-item"><div class="ev-dot"></div><div class="ev-txt"><strong>Did calls continue after revocation?</strong> Count every post-revocation contact.</div></div>
+    <div class="ev-item"><div class="ev-dot"></div><div class="ev-txt"><strong>Who was the caller?</strong> Creditor, collector, or vendor calling on their behalf?</div></div>
+    <div class="ev-item"><div class="ev-dot"></div><div class="ev-txt"><strong>How many total violations?</strong> Pull full call log from the phone carrier.</div></div>
+  </div>
+
+  <!-- CLASSIFICATION TABLE -->
+  <h2>Classify what you find — the intake question that matters</h2>
+  <p>Do not ask only <em>"Did they call after revocation?"</em> Ask <em>"How did they call?"</em> The answer determines which statute fires and how strong the claim is.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Post-revocation contact type</th>
+        <th>Likely statute(s)</th>
+        <th>Strength</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>True manual human call — live agent, no automation, no prerecorded message</td>
+        <td>Usually not TCPA</td>
+        <td><span class="badge amber">Weak TCPA</span></td>
+      </tr>
+      <tr>
+        <td>Live agent answers after pause or dead air before speaking</td>
+        <td>Possible ATDS evidence — investigate further</td>
+        <td><span class="badge amber">Investigate</span></td>
+      </tr>
+      <tr>
+        <td>Prerecorded voicemail or message</td>
+        <td>TCPA</td>
+        <td><span class="badge green">Strong TCPA</span></td>
+      </tr>
+      <tr>
+        <td>Artificial or AI-generated voice</td>
+        <td>TCPA</td>
+        <td><span class="badge green">Strong TCPA</span></td>
+      </tr>
+      <tr>
+        <td>Automated text / robotext</td>
+        <td>Potential TCPA — investigate</td>
+        <td><span class="badge amber">Investigate</span></td>
+      </tr>
+      <tr>
+        <td><em>Automated text confirmation:</em> short code, bulk platform, identical scripts, instant auto-response, or after written/oral revocation</td>
+        <td>TCPA — stronger hook</td>
+        <td><span class="badge green">Strong TCPA</span></td>
+      </tr>
+      <tr>
+        <td>Any call after attorney representation notice from a third-party collector</td>
+        <td>FDCPA / Rosenthal (+ TCPA if automated)</td>
+        <td><span class="badge green">Strong FDCPA</span></td>
+      </tr>
+      <tr>
+        <td>Repeated harassing calls — pattern of frequency</td>
+        <td>FDCPA / Rosenthal; possible TCPA if automated</td>
+        <td><span class="badge blue">Stack both</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert info">
+    <div class="alert-i">ℹ</div>
+    <p><strong>When in doubt on the "how" — ask the client:</strong> Did you hear a pause or click before anyone spoke? Did the voicemail sound like a real person or a recording? Did you get texts that replied instantly or used a short 5-digit number? These answers move a case from "possible" to "provable."</p>
+  </div>
+
+  <!-- DAMAGES MATH -->
+  <h2>TCPA damages — why call logs matter</h2>
+  <p>TCPA damages stack per violation. Every post-revocation robocall or robotext is a separate item in the damages calculation. This is the fundamental difference from the FDCPA's $1,000 per-case cap.</p>
+
+  <table>
+    <thead><tr><th>Scenario</th><th>FDCPA damages</th><th>TCPA damages</th></tr></thead>
+    <tbody>
+      <tr><td>1 violation</td><td>Up to $1,000</td><td>$500–$1,500</td></tr>
+      <tr><td>10 post-revocation calls</td><td>Still $1,000 (capped per case)</td><td>$5,000–$15,000</td></tr>
+      <tr><td>30 post-revocation calls</td><td>Still $1,000</td><td><strong>$15,000–$45,000</strong></td></tr>
+      <tr><td>60 post-revocation calls</td><td>Still $1,000</td><td><strong>$30,000–$90,000</strong></td></tr>
+      <tr><td>Willful/knowing violation multiplier</td><td>None</td><td>Up to 3× ($1,500 per call)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert success">
+    <div class="alert-i">★</div>
+    <p>That is why call logs matter. Every post-revocation robocall or robotext can potentially become part of the damages stack. Get the full call history — not just what the client remembers.</p>
+  </div>
+
+  <!-- ROSENTHAL -->
+  <h2>The California layer: Rosenthal Fair Debt Collection Practices Act</h2>
+  <p>The federal FDCPA leaves a gap: original creditors collecting their own debts aren't covered. California closed that gap with the <strong>Rosenthal Fair Debt Collection Practices Act</strong> (Cal. Civil Code §1788 et seq.), which is broader than federal FDCPA and often reaches original-creditor collection conduct that federal FDCPA misses. It also allows for actual damages, statutory damages up to $1,000, and attorney fees. File Rosenthal alongside FDCPA for every California case involving a third-party collector, and use Rosenthal as the primary conduct hook for original creditor conduct cases in California — but still confirm the debt type, defendant status, conduct, and remedy path before filing.</p>
+
+  <!-- OPERATIONAL RULES -->
+  <h2>UA Law operational rules</h2>
+
+  <div class="keybox">
+    <div class="keybox-icon">⚖</div>
+    <div class="keybox-body">
+      <div class="keybox-title">The three-question framework</div>
+      <p><strong>FDCPA asks:</strong> Who is collecting? — The FDCPA is the rulebook for third-party debt collectors. It tells them what they can and cannot do when trying to collect a consumer debt. Third-party collector? FDCPA applies.<br><br>
+      <strong>TCPA asks:</strong> How did they contact the client, and did they still have consent? ATDS or prerecorded voice after revocation? TCPA applies to everyone — including original creditors.<br><br>
+      <strong>Rosenthal asks:</strong> Is this a California client? If yes, Rosenthal covers original creditor conduct that the federal FDCPA misses — and applies FDCPA-equivalent rules to all collectors in the state.</p>
+    </div>
+  </div>
+
+  <table>
+    <thead><tr><th>Statute</th><th>Covers</th><th>Key trigger</th><th>Damages</th></tr></thead>
+    <tbody>
+      <tr><td><strong>FDCPA</strong></td><td>Third-party collectors only</td><td>Collector conduct &amp; behavior</td><td>$1,000/case + fees</td></tr>
+      <tr><td><strong>TCPA</strong></td><td>Anyone using ATDS or prerecorded voice</td><td>Technology + consent revoked</td><td>$500–$1,500/call, stacks</td></tr>
+      <tr><td><strong>Rosenthal</strong></td><td>Broader than federal FDCPA — often reaches original creditors in CA; confirm coverage per defendant</td><td>Conduct — same as FDCPA</td><td>$1,000/case + fees</td></tr>
+    </tbody>
+  </table>
+
+  <div style="background:var(--navy);border-radius:9px;padding:20px 24px;margin:24px 0">
+    <div style="font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Final internal rule</div>
+    <div style="font-size:14px;color:rgba(255,255,255,.85);line-height:1.8">
+      <strong style="color:var(--gold-light)">TCPA</strong> <span style="color:rgba(255,255,255,.6)">is for robocalls, robotexts, prerecorded voice, artificial voice, AI voice, and automated contact after consent is revoked.</span><br>
+      <strong style="color:var(--gold-light)">TCPA can apply to original creditors and third-party collectors.</strong><br>
+      <strong style="color:var(--gold-light)">File FDCPA + TCPA together</strong> <span style="color:rgba(255,255,255,.6)">whenever possible. Add Rosenthal for California clients. Every additional statute is additional leverage.</span>
+    </div>
+  </div>
+
+</div><!-- /page-tcpa -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FDCPA OVERVIEW
+═══════════════════════════════════════════════════════ -->
+<div id="page-fdcpa-overview" class="page">
+  <div class="eyebrow">FDCPA — Introduction</div>
+  <div class="pg-title">Fair Debt Collection Practices Act</div>
+  <div class="pg-sub">15 U.S.C. §§1692–1692p · The federal law governing how third-party debt collectors may contact, communicate with, and pursue consumers. UA Law's FDCPA practice is built on identifying violations of this statute and filing alongside TCPA.</div>
+
+  <div class="stats">
+    <div class="stat"><span class="v">$1,000</span><span class="l">Statutory damages per case</span></div>
+    <div class="stat"><span class="v">1 year</span><span class="l">Statute of limitations</span></div>
+    <div class="stat"><span class="v">+fees</span><span class="l">Attorney fees if you win</span></div>
+  </div>
+
+  <h2>Why this law exists</h2>
+  <p>Congress enacted the FDCPA in 1977 after finding that abusive, deceptive, and unfair debt collection practices were widespread — causing personal bankruptcies, marital instability, job loss, and invasions of privacy. Three stated purposes:</p>
+
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico req">1</div><div class="rc-title">Eliminate abusive collection practices</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Congress found that abusive practices contribute to bankruptcies, marital instability, and job loss. The statute is designed to stop these practices at scale — not just in individual cases.</p></div>
+  </div>
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico req">2</div><div class="rc-title">Give consumers tools to dispute and verify debt</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>The law creates a structured validation system — consumers have a right to demand proof of a debt's validity before a collector can continue pursuing it. This is the foundation of the debt validation program your clients are enrolled in.</p></div>
+  </div>
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico req">3</div><div class="rc-title">Protect reputable collectors from unfair competition</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Often overlooked — the FDCPA also levels the playing field by ensuring bad-actor collectors can't undercut ethical ones by relying on harassment tactics that ethical collectors avoid.</p></div>
+  </div>
+
+  <div class="alert info">
+    <div class="alert-i">ℹ</div>
+    <p><strong>FDCPA is a strict liability statute.</strong> Intent is not required for most violations. The conduct itself is what matters. The bona fide error defense exists but is narrow — repeated identical "errors" are not mistakes, they are policy.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FDCPA — WHO IS COVERED
+═══════════════════════════════════════════════════════ -->
+<div id="page-fdcpa-who" class="page">
+  <div class="eyebrow">§1692a — Definitions</div>
+  <div class="pg-title">Who Is Covered</div>
+  <div class="pg-sub">The FDCPA only applies to "debt collectors" pursuing "debts" as specifically defined. Getting this right at intake is step one — if FDCPA doesn't apply, pivot to TCPA and Rosenthal analysis immediately.</div>
+
+  <h2>Who qualifies as a "debt collector"</h2>
+
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico good">✓</div><div class="rc-title">Third-party collection agencies</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Any person or entity whose principal business is collecting debts owed to another, or who regularly collects debts owed to another. Classic collection agencies like Encore Capital, Midland Funding, and similar firms are the core FDCPA targets.</p></div>
+  </div>
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico good">✓</div><div class="rc-title">Debt buyers — usually strong, but plead correctly</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>A debt buyer is <strong>not automatically</strong> an FDCPA debt collector merely because it purchased defaulted debt. After <em>Henson v. Santander</em> (2017), the Supreme Court held that a company collecting debt it purchased for its own account may not qualify under the "owed another" prong. The cleaner theory: most debt buyers qualify under the <strong>principal purpose definition</strong> — their business is acquiring and collecting consumer debts. In the Ninth Circuit, outsourcing collection to a third-party agency does not necessarily shield the debt buyer if its principal purpose remains debt collection. Plead the principal purpose theory explicitly for Portfolio Recovery, LVNV Funding, and similar entities.</p></div>
+  </div>
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico good">✓</div><div class="rc-title">Collection law firms</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Attorneys and law firms whose principal business is debt collection. The FDCPA expressly covers them. This is why collection law firm letters must include the mini-Miranda disclosure ("this is an attempt to collect a debt").</p></div>
+  </div>
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico warn">?</div><div class="rc-title">Original creditor using another name — possible FDCPA</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>If an original creditor uses a subsidiary name or trade name that implies a third party is collecting, courts may apply the FDCPA. Watch for creditors operating collection departments under a different brand. This is a common attempted workaround.</p><div class="alert warn"><div class="alert-i">!</div><p>When in doubt, document the name on the letter or caller ID. If it doesn't match the original creditor's name on the account, research the corporate relationship — it may support FDCPA coverage.</p></div></div>
+  </div>
+
+  <h2>Who is excluded from FDCPA</h2>
+  <div class="rc">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Original creditors collecting their own debt under their own name</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Chase calling about a Chase account. This is the core FDCPA limitation. However, <strong>TCPA still applies</strong> if they're using an autodialer or prerecorded voice. And <strong>Rosenthal applies</strong> for California clients — covering original creditor conduct that federal FDCPA misses.</p></div>
+  </div>
+  <div class="rc">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Creditors collecting before default</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Auto finance companies and mortgage servicers collecting payments on active, non-defaulted accounts are excluded. The FDCPA is triggered after default — not during normal payment servicing.</p></div>
+  </div>
+
+  <h2>What debts are covered — §1692a(5)</h2>
+  <table>
+    <thead><tr><th>Covered</th><th>Not Covered</th></tr></thead>
+    <tbody>
+      <tr><td>Credit card debt</td><td>Business loans or commercial debts</td></tr>
+      <tr><td>Medical bills</td><td>Agricultural debt</td></tr>
+      <tr><td>Personal loans</td><td>Debts of business entities (LLCs, corps)</td></tr>
+      <tr><td>Auto loans (personal use)</td><td>Auto loans for commercial fleet</td></tr>
+      <tr><td>Mortgage (residential)</td><td>Tax debt (separate federal rules)</td></tr>
+      <tr><td>Utility bills (residential)</td><td>Any debt not for personal/family/household purpose</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert danger">
+    <div class="alert-i">⚠</div>
+    <p><strong>Intake check:</strong> Confirm (1) the debt is consumer, not business, and (2) the caller is a third-party collector, not the original creditor under its own name. If either fails, shift immediately to TCPA and Rosenthal analysis — don't close the file.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FDCPA — COMMUNICATIONS
+═══════════════════════════════════════════════════════ -->
+<div id="page-fdcpa-comms" class="page">
+  <div class="eyebrow">§1692b–c</div>
+  <div class="pg-title">Communication Rules</div>
+  <div class="pg-sub">The FDCPA strictly governs when, where, and how a collector may contact a consumer. Many of the most provable violations are communication violations — and they overlap with TCPA claims.</div>
+
+  <h2>Time and place restrictions — §1692c</h2>
+
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">No calls before 8:00 AM or after 9:00 PM — consumer's local time</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Collectors must account for time zones. An early-morning or late-evening call is a per se violation. Have clients log all call times with dates — this is one of the easiest violations to prove.</p></div>
+  </div>
+
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">No contact at the workplace if employer prohibits it</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>If the collector knows or has reason to know that the employer prohibits such contact, it must stop. The client telling the collector "don't call me at work" is sufficient notice — no formal employer policy required.</p></div>
+  </div>
+
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">No direct contact once consumer is represented by an attorney — §1692c(a)(2)</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body">
+      <p>The moment a client enrolls and we notify the collector of legal representation, all direct consumer contact must stop. The collector must communicate exclusively with the attorney. Any direct call to the client after that date is a violation.</p>
+      <div class="cite-block">§1692c(a)(2): A debt collector may not communicate with a consumer "if the debt collector knows the consumer is represented by an attorney with respect to such debt and has knowledge of, or can readily ascertain, such attorney's name and address."</div>
+      <div class="alert danger"><div class="alert-i">⚠</div><p><strong>UA Law action item:</strong> Send attorney representation notice on Day 1. Date-stamp delivery. Any calls to the client after that date are clean FDCPA violations — and if the calls are autodialed, TCPA violations too.</p></div>
+    </div>
+  </div>
+
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Cease communication obligation after written request</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body">
+      <p>A written cease-and-desist stops all collection communications. The only permitted contacts after that: (1) confirming that collection is ceasing, or (2) notifying of specific intended legal action.</p>
+      <div class="alert warn"><div class="alert-i">!</div><p><strong>Written vs. oral — FDCPA vs. TCPA difference:</strong> Under FDCPA, the cease-communication request must be in writing to trigger §1692c. Under TCPA, an oral "stop calling me" on a recorded call is sufficient to revoke consent. File both claims and let each statute's standard apply independently.</p></div>
+    </div>
+  </div>
+
+  <h2>Contacting third parties — §1692b</h2>
+  <ul class="ck">
+    <li>May contact third parties only to locate the consumer — address, home phone, place of employment</li>
+    <li>Must not reveal the existence of the debt to any third party</li>
+    <li>Cannot contact the same third party more than once unless that person requests it</li>
+    <li>Cannot identify themselves as a debt collector unless specifically asked</li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FDCPA — PROHIBITED PRACTICES
+═══════════════════════════════════════════════════════ -->
+<div id="page-fdcpa-prohibited" class="page">
+  <div class="eyebrow">§1692d, §1692e, §1692f</div>
+  <div class="pg-title">Prohibited Practices</div>
+  <div class="pg-sub">Three separate sections — harassment/abuse (§d), false representations (§e), and unfair practices (§f). Each is an independent cause of action. Stack them where the facts support it.</div>
+
+  <h2>§1692d — Harassment and abuse</h2>
+
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Repeated or continuous calls to annoy — §1692d(5)</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Regulation F (CFPB, 2021) created a rebuttable presumption: more than 7 calls within 7 days, or calling within 7 days of a conversation about the particular debt, is presumptively a violation. This is powerful intake evidence — but still document the full pattern: specific debt, call dates, whether calls connected, and whether any consent or exception applies. Do not treat the 7-in-7 threshold as a mechanical trigger; treat it as the strongest point in a pattern argument.</p></div>
+  </div>
+  <div class="rc">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Threats of violence or harm</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Any threat of violence or harm to the consumer, their reputation, or their property. This extends to implied threats. Clients should document exact language used.</p></div>
+  </div>
+  <div class="rc">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Obscene or profane language</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Use of profane or obscene language in any communication. Clients should record calls where legally permitted, or document exact words immediately after the call.</p></div>
+  </div>
+
+  <h2>§1692e — False or misleading representations</h2>
+  <p>Sixteen specific examples are listed; courts treat the list as non-exhaustive. The "least sophisticated consumer" standard applies — would the least savvy consumer be misled?</p>
+
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Misrepresenting the amount or character of the debt — §1692e(2)</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Claiming a debt is larger than it actually is, including unauthorized fees or interest. Also applies to misrepresenting a time-barred debt as legally enforceable. Pull the original account statements — if the collector's amount doesn't match, that's a §1692e(2) violation and likely a §1692f(1) unfair practices violation simultaneously.</p></div>
+  </div>
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Falsely implying they are an attorney — §1692e(3)</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Representing or implying a communication is from an attorney when it is not. Law firm letterhead used by non-attorney collectors is the classic form of this violation.</p></div>
+  </div>
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Threatening legal action not intended — §1692e(5)</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Threatening to sue, garnish wages, or seize property when the collector has no legal basis or actual intent. One of the most common violations. Document the exact threat language.</p></div>
+  </div>
+  <div class="rc">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Threat of arrest or criminal prosecution — §1692e(4)</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Consumer debts are civil matters. No criminal prosecution is possible for nonpayment. Any suggestion of arrest is per se false — document it immediately.</p></div>
+  </div>
+  <div class="rc">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Failure to identify as a debt collector — §1692e(11)</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>The mini-Miranda: every initial written and oral communication must disclose that the caller is a debt collector attempting to collect a debt, and that information obtained will be used for that purpose. Absence is a per se violation.</p></div>
+  </div>
+
+  <h2>§1692f — Unfair practices</h2>
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Collecting unauthorized amounts — §1692f(1)</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Collecting any amount — interest, fees, charges, expenses — not expressly authorized by the original agreement or permitted by law. Compare the collector's demand to the original account agreement.</p></div>
+  </div>
+  <div class="rc">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Filing suit in an improper venue — §1692i</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>A collector may only sue in the judicial district where the consumer resides or where the contract was signed. Suing in a distant or inconvenient court is an independent FDCPA violation.</p></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FDCPA — VALIDATION
+═══════════════════════════════════════════════════════ -->
+<div id="page-fdcpa-validation" class="page">
+  <div class="eyebrow">§1692g — Full Statutory Analysis</div>
+  <div class="pg-title">Validation of Debts</div>
+  <div class="pg-sub">The cornerstone of the debt validation program. §1692g creates a mandatory disclosure and dispute framework. Failure to comply is a per se FDCPA violation. Know this section cold.</div>
+
+  <div class="alert success">
+    <div class="alert-i">★</div>
+    <p><strong>Why this matters to us:</strong> The §1692g notice is the statutory foundation for the debt validation letters your clients send. It also creates independent violations when collectors fail to send the notice, ignore a written dispute, or continue collecting during the dispute window.</p>
+  </div>
+
+  <h2>The 30-day validation timeline</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot d0">D0</div>
+      <div class="tl-body">
+        <div class="tl-lbl">Day 0 — First contact</div>
+        <div class="tl-txt">The collector makes initial communication with the consumer. The 5-day clock starts. If the required disclosures are included in this first contact, the separate written notice is not required.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot d5">D5</div>
+      <div class="tl-body">
+        <div class="tl-lbl">Within 5 days — Validation notice required</div>
+        <div class="tl-txt">Unless the required information was in the first communication, the collector must send a written notice with all five required disclosures. Missing any single element is a per se violation — no additional harm required.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot d30">D30</div>
+      <div class="tl-body">
+        <div class="tl-lbl">Within 30 days — Consumer's dispute window</div>
+        <div class="tl-txt">The consumer has 30 days from receipt of the notice to send a written dispute. Collection may continue during this window — but cannot "overshadow or be inconsistent with" the consumer's dispute rights. Demand letters with short deadlines during this period are a common overshadowing violation.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot da">→</div>
+      <div class="tl-body">
+        <div class="tl-lbl">After written dispute — Collection suspended</div>
+        <div class="tl-txt">All collection activity must stop until the collector obtains and mails verification of the debt. Any call or demand letter after a timely written dispute and before verification is mailed is a clear violation.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>§1692g — Full statutory text</h2>
+
+  <div class="sub">
+    <div class="sub-h"><span class="sub-code">§1692g(a)</span><span class="sub-name">Notice of debt — required contents</span></div>
+    <div class="sub-body">
+      <p>Within five days after the initial communication with a consumer in connection with the collection of any debt, a debt collector shall send the consumer a written notice containing:</p>
+      <ol class="nlist">
+        <li>The <strong>amount of the debt</strong></li>
+        <li>The <strong>name of the creditor</strong> to whom the debt is owed</li>
+        <li>A statement that unless the consumer disputes within thirty days, the debt <strong>will be assumed to be valid</strong></li>
+        <li>A statement that if the consumer notifies the debt collector <strong>in writing within thirty days</strong> that the debt is disputed, the collector will obtain verification and mail it to the consumer</li>
+        <li>A statement that upon <strong>written request within thirty days</strong>, the collector will provide the <strong>name and address of the original creditor</strong> if different from the current creditor</li>
+      </ol>
+      <div class="alert danger"><div class="alert-i">⚠</div><p><strong>Missing any single element</strong> is a per se §1692g violation. Courts have also found violations for notices that technically include the information but present it in a confusing or "overshadowed" way.</p></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-h"><span class="sub-code">§1692g(b)</span><span class="sub-name">Disputed debts — cease collection</span></div>
+    <div class="sub-body">
+      <p>If the consumer notifies the collector in writing within the thirty-day period that the debt is disputed, the collector shall:</p>
+      <ul class="ck">
+        <li>Cease collection of the debt or any disputed portion</li>
+        <li>Obtain verification of the debt or a copy of a judgment</li>
+        <li>Mail the verification to the consumer before resuming collection</li>
+      </ul>
+      <div class="statute">
+        <div class="s-ey">§1692g(b) — Overshadowing clause (2006 amendment)</div>
+        <div class="s-txt">"Any collection activities and communication during the 30-day period may not <strong>overshadow or be inconsistent with</strong> the disclosure of the consumer's right to dispute the debt or request the name and address of the original creditor."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-h"><span class="sub-code">§1692g(c)</span><span class="sub-name">Silence is not an admission of liability</span></div>
+    <div class="sub-body"><p>The failure of a consumer to dispute the validity of a debt <strong>may not be construed as an admission of liability</strong>. Clients who enroll after the 30-day window has already passed have not legally admitted the debt is valid. The dispute right and courtroom defenses are separate.</p></div>
+  </div>
+
+  <div class="sub">
+    <div class="sub-h"><span class="sub-code">§1692g(d)</span><span class="sub-name">Legal pleadings are not "initial communications"</span></div>
+    <div class="sub-body"><p>A formal pleading in a civil action does not trigger the 5-day validation clock. Added in 2006 to address attorney-collectors who file lawsuits as their first contact.</p></div>
+  </div>
+
+  <h2>Common §1692g violations to look for at intake</h2>
+  <table>
+    <thead><tr><th>Violation</th><th>What to look for</th><th>Severity</th></tr></thead>
+    <tbody>
+      <tr><td>No validation notice sent</td><td>Client received calls or letters but never got a written notice with all 5 elements</td><td><span class="badge red">Per se violation</span></td></tr>
+      <tr><td>Late validation notice</td><td>Notice sent more than 5 days after first contact</td><td><span class="badge red">Per se violation</span></td></tr>
+      <tr><td>Incomplete notice</td><td>Missing any one of the 5 required elements</td><td><span class="badge red">Per se violation</span></td></tr>
+      <tr><td>Continuing to collect after written dispute</td><td>Client sent written dispute, collector called or sent demand letter anyway</td><td><span class="badge red">Clear violation</span></td></tr>
+      <tr><td>Overshadowing</td><td>Demand letter during 30-day window says "pay within 10 days"</td><td><span class="badge amber">Strong claim</span></td></tr>
+      <tr><td>No verification before resuming</td><td>Collector resumes collection before mailing verification</td><td><span class="badge red">Clear violation</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FDCPA — DAMAGES
+═══════════════════════════════════════════════════════ -->
+<div id="page-fdcpa-damages" class="page">
+  <div class="eyebrow">§1692k — Civil liability</div>
+  <div class="pg-title">Remedies &amp; Damages</div>
+  <div class="pg-sub">Strict liability statute — intent is not required for most violations. What matters is the conduct itself.</div>
+
+  <div class="stats">
+    <div class="stat"><span class="v">$1,000</span><span class="l">Max statutory per lawsuit</span></div>
+    <div class="stat"><span class="v">No cap</span><span class="l">Actual damages</span></div>
+    <div class="stat"><span class="v">Mandatory</span><span class="l">Attorney fees if you win</span></div>
+  </div>
+
+  <h2>What a consumer can recover — §1692k(a)</h2>
+
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico good">$</div><div class="rc-title">Actual damages — no ceiling</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>Includes emotional distress, lost wages, out-of-pocket costs, and any other actual harm. Strong documentation of the client's stress, missed work, and life disruption strengthens actual damage claims significantly.</p></div>
+  </div>
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico good">$</div><div class="rc-title">Statutory damages — up to $1,000 per lawsuit</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body">
+      <p>No actual harm required. A technical violation alone entitles the consumer to up to $1,000. Courts have discretion based on frequency, severity, and intentionality.</p>
+      <div class="alert warn"><div class="alert-i">!</div><p><strong>Key limitation:</strong> The $1,000 is per <em>lawsuit</em>, not per violation. Multiple FDCPA violations in the same case still yield one $1,000 statutory cap. This is why TCPA is filed alongside FDCPA — TCPA stacks per call and has no case cap.</p></div>
+    </div>
+  </div>
+  <div class="rc open">
+    <div class="rc-h" onclick="rc(this)"><div class="rc-ico good">$</div><div class="rc-title">Attorney fees and costs — mandatory if plaintiff wins</div><div class="rc-tog">▾</div></div>
+    <div class="rc-body"><p>The FDCPA mandates an award of reasonable attorney fees and costs to a successful plaintiff. This fee-shifting is what makes FDCPA cases economically viable for plaintiff attorneys even on small-dollar claims.</p></div>
+  </div>
+
+  <h2>The bona fide error defense — §1692k(c)</h2>
+  <div class="statute">
+    <div class="s-ey">15 U.S.C. §1692k(c)</div>
+    <div class="s-txt">A debt collector may not be held liable if it shows by a preponderance of the evidence that the violation was <strong>not intentional</strong> and resulted from a <strong>bona fide error</strong> notwithstanding the maintenance of procedures reasonably adapted to avoid any such error.</div>
+  </div>
+  <div class="alert danger">
+    <div class="alert-i">⚠</div>
+    <p><strong>Counter-strategy:</strong> Establish a pattern. If the same collector has repeated the same conduct across multiple accounts, the bona fide error defense collapses — repeated identical "errors" are policy, not mistakes.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>Rule</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td>Where to file</td><td>State or federal court — consumer's choice (concurrent jurisdiction)</td></tr>
+      <tr><td>Statute of limitations</td><td>1 year from the date of the violation — not from discovery</td></tr>
+      <tr><td>Frivolous suit risk</td><td>Court may award fees to collector if consumer filed in bad faith</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     MIRRORING STATES
+═══════════════════════════════════════════════════════ -->
+<div id="page-mirroring" class="page">
+<style>
+.state-explorer{display:grid;grid-template-columns:210px 1fr;border:1px solid var(--gray-200);border-radius:10px;overflow:hidden;margin:24px 0;min-height:540px}
+.sl{background:var(--navy);overflow-y:auto;display:flex;flex-direction:column}
+.sl-head{padding:10px 14px;font-family:var(--fm);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0}
+.sl-section{padding:8px 14px 3px;font-family:var(--fm);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.22);font-weight:600}
+.sb-btn{display:flex;align-items:center;gap:8px;padding:7px 14px;cursor:pointer;border-left:2px solid transparent;transition:all .12s;width:100%;background:none;border-top:none;border-right:none;border-bottom:none;text-align:left}
+.sb-btn:hover{background:rgba(255,255,255,.05)}
+.sb-btn.active{background:rgba(200,150,58,.1);border-left-color:var(--gold)}
+.sb-abbr{font-family:var(--fm);font-size:10px;font-weight:500;color:rgba(255,255,255,.38);width:22px;flex-shrink:0}
+.sb-btn.active .sb-abbr{color:var(--gold)}
+.sb-sname{font-size:11.5px;color:rgba(255,255,255,.5);flex:1}
+.sb-btn.active .sb-sname{color:#fff}
+.td{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.td.t1{background:#1a6b3c}
+.td.t2{background:#8a5a00}
+.td.t3{background:#6b6560}
+.sd{background:#fff;padding:26px 28px;overflow-y:auto;display:flex;flex-direction:column}
+.sd-ph{display:flex;align-items:center;justify-content:center;flex:1;color:var(--gray-300);font-size:13px;font-style:italic;text-align:center;line-height:1.6}
+.sd-ph span{max-width:180px}
+.sdc{display:none}
+.sdc.active{display:block}
+.sdc-ey{font-family:var(--fm);font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
+.sdc-ey.t1{color:var(--green)}
+.sdc-ey.t2{color:var(--amber)}
+.sdc-ey.t3{color:var(--gray-500)}
+.sdc-title{font-family:var(--fh);font-size:19px;color:var(--navy);margin-bottom:3px;line-height:1.25}
+.sdc-statute{font-family:var(--fm);font-size:10.5px;color:var(--gray-500);margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--gray-200)}
+.sdc-pills{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+.sdc-pill{background:var(--gray-100);border-radius:7px;padding:9px 12px}
+.sdc-pl{font-size:9px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-500);margin-bottom:3px}
+.sdc-pv{font-size:12.5px;font-weight:500}
+.sdc-pv.yes{color:var(--green)}
+.sdc-pv.no{color:var(--red)}
+.sdc-pv.partial{color:var(--amber)}
+.sdc-pv.verify{color:var(--purple)}
+.sdc-pv.na{color:var(--gray-500)}
+.sdc p{font-size:12.5px;color:var(--gray-700);margin-bottom:9px;line-height:1.65}
+.sdc .cite-block{font-size:10.5px;padding:7px 11px;margin:8px 0}
+.sdc .alert{padding:9px 12px;margin:10px 0}
+.sdc .alert p{font-size:12px}
+.tier-key{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.tk-item{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--gray-700)}
+.tk-dot{width:8px;height:8px;border-radius:50%}
+.tk-dot.t1{background:var(--green)}
+.tk-dot.t2{background:var(--amber)}
+.tk-dot.t3{background:var(--gray-500)}
+</style>
+
+  <div class="eyebrow">State-Level Overlays</div>
+  <div class="pg-title">Mirroring States</div>
+  <div class="pg-sub">Federal FDCPA is the floor. Mirroring-state laws are the state-level overlays. In some states, that overlay copies or imports FDCPA rules and applies them more broadly — sometimes against original creditors the federal statute cannot touch. For UA Law, this is where the FDCPA playbook gets bigger than federal FDCPA alone.</div>
+
+  <div class="hero-callout">
+    <div class="hc-ey">The clean explanation</div>
+    <div class="hc-title">Mirroring states are where state law gives consumers FDCPA-like protections — even when the federal FDCPA may not apply.</div>
+    <div class="hc-body">These laws often mirror the FDCPA's rules against harassment, deception, unfair practices, improper contact, and validation issues — but some states go further by applying those rules to <strong>original creditors</strong>, not just third-party debt collectors. Mirroring-state laws may let us pursue original creditors, debt buyers, collection agencies, law firms, servicers, and vendors. <strong>You need to verify each state separately before filing.</strong></div>
+  </div>
+
+  <div class="keybox">
+    <div class="keybox-icon">⚖</div>
+    <div class="keybox-body">
+      <div class="keybox-title">The violation unit question — reframe the intake</div>
+      <p>Do not ask only <em>"Is this FDCPA?"</em> Ask: <em>"Is this federal FDCPA, state mirror law, TCPA, or all of the above?"</em> A client call from an original creditor may be weak under federal FDCPA but strong under a state mirror law. Client residence and where the calls or messages were received are usually the starting points — but choice-of-law, account agreement terms, defendant location, and state-specific statutes may all affect the analysis. Confirm with supervising counsel.</p>
+
+  <div class="alert danger">
+    <div class="alert-i">⚠</div>
+    <p><strong>State-law matrix is a screening tool only — not authority.</strong> Do not file from this chart. Before filing any state claim, confirm with supervising counsel: current statute text, whether original creditors are covered, damages ceiling, SOL, pre-suit notice requirements, licensing hooks, and choice-of-law issues.</p>
+  </div>
+    </div>
+  </div>
+
+  <h2>Scenario matrix — federal vs. state vs. TCPA</h2>
+  <table>
+    <thead><tr><th>Scenario</th><th>Federal FDCPA</th><th>Mirroring State</th><th>TCPA</th></tr></thead>
+    <tbody>
+      <tr><td>Original creditor calls client directly</td><td><span class="badge red">Usually no</span></td><td><span class="badge amber">Maybe yes</span></td><td><span class="badge amber">Maybe — if automated after revocation</span></td></tr>
+      <tr><td>Third-party collector calls client directly</td><td><span class="badge green">Yes</span></td><td><span class="badge green">Usually yes</span></td><td><span class="badge amber">Maybe — if automated</span></td></tr>
+      <tr><td>Collection law firm calls client</td><td><span class="badge green">Often yes</span></td><td><span class="badge green">Often yes</span></td><td><span class="badge amber">Maybe — if automated</span></td></tr>
+      <tr><td>Original creditor ignores attorney notice — CA client</td><td><span class="badge red">Usually not FDCPA</span></td><td><span class="badge amber">Possible Rosenthal</span></td><td><span class="badge amber">Maybe — if automated</span></td></tr>
+      <tr><td>Original creditor uses robocalls after revocation</td><td><span class="badge red">Not FDCPA</span></td><td><span class="badge amber">State-dependent</span></td><td><span class="badge green">Strong TCPA if documented</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>State reference — click any state for detail</h2>
+  <div class="tier-key">
+    <div class="tk-item"><div class="tk-dot t1"></div> Tier 1 — Confirmed original creditor coverage</div>
+    <div class="tk-item"><div class="tk-dot t2"></div> Tier 2 — Investigate before relying</div>
+    <div class="tk-item"><div class="tk-dot t3"></div> Tier 3 — Limited or uncertain coverage</div>
+  </div>
+
+  <div class="state-explorer">
+    <!-- LEFT: State list -->
+    <div class="sl">
+      <div class="sl-head">Our portfolio states</div>
+      <div class="sl-section">Tier 1 — Confirmed</div>
+      <button class="sb-btn" onclick="showState('ca',this)"><span class="sb-abbr">CA</span><span class="sb-sname">California</span><span class="td t1"></span></button>
+      <button class="sb-btn" onclick="showState('tx',this)"><span class="sb-abbr">TX</span><span class="sb-sname">Texas</span><span class="td t1"></span></button>
+      <button class="sb-btn" onclick="showState('fl',this)"><span class="sb-abbr">FL</span><span class="sb-sname">Florida</span><span class="td t1"></span></button>
+      <button class="sb-btn" onclick="showState('nc',this)"><span class="sb-abbr">NC</span><span class="sb-sname">North Carolina</span><span class="td t1"></span></button>
+      <button class="sb-btn" onclick="showState('mi',this)"><span class="sb-abbr">MI</span><span class="sb-sname">Michigan</span><span class="td t1"></span></button>
+      <button class="sb-btn" onclick="showState('ma',this)"><span class="sb-abbr">MA</span><span class="sb-sname">Massachusetts</span><span class="td t1"></span></button>
+      <button class="sb-btn" onclick="showState('wi',this)"><span class="sb-abbr">WI</span><span class="sb-sname">Wisconsin</span><span class="td t1"></span></button>
+      <button class="sb-btn" onclick="showState('pa',this)"><span class="sb-abbr">PA</span><span class="sb-sname">Pennsylvania</span><span class="td t1"></span></button>
+      <button class="sb-btn" onclick="showState('md',this)"><span class="sb-abbr">MD</span><span class="sb-sname">Maryland</span><span class="td t1"></span></button>
+      <button class="sb-btn" onclick="showState('or',this)"><span class="sb-abbr">OR</span><span class="sb-sname">Oregon</span><span class="td t1"></span></button>
+      <div class="sl-section">Tier 2 — Investigate</div>
+      <button class="sb-btn" onclick="showState('ny',this)"><span class="sb-abbr">NY</span><span class="sb-sname">New York</span><span class="td t2"></span></button>
+      <button class="sb-btn" onclick="showState('co',this)"><span class="sb-abbr">CO</span><span class="sb-sname">Colorado</span><span class="td t2"></span></button>
+      <button class="sb-btn" onclick="showState('wa',this)"><span class="sb-abbr">WA</span><span class="sb-sname">Washington</span><span class="td t2"></span></button>
+      <button class="sb-btn" onclick="showState('ct',this)"><span class="sb-abbr">CT</span><span class="sb-sname">Connecticut</span><span class="td t2"></span></button>
+      <button class="sb-btn" onclick="showState('mn',this)"><span class="sb-abbr">MN</span><span class="sb-sname">Minnesota</span><span class="td t2"></span></button>
+      <button class="sb-btn" onclick="showState('hi',this)"><span class="sb-abbr">HI</span><span class="sb-sname">Hawaii</span><span class="td t2"></span></button>
+      <div class="sl-section">Tier 3 — Limited</div>
+      <button class="sb-btn" onclick="showState('il',this)"><span class="sb-abbr">IL</span><span class="sb-sname">Illinois</span><span class="td t3"></span></button>
+    </div>
+
+    <!-- RIGHT: State detail panel -->
+    <div class="sd">
+      <div class="sd-ph" id="sd-placeholder"><span>← Select a state to view coverage details, statute name, damages, and filing notes</span></div>
+
+      <!-- CA -->
+      <div class="sdc" id="sdc-ca">
+        <div class="sdc-ey t1">Tier 1 — Confirmed original creditor coverage</div>
+        <div class="sdc-title">California</div>
+        <div class="sdc-statute">Rosenthal Fair Debt Collection Practices Act · Cal. Civil Code §§1788–1788.33</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv yes">Yes — the gold standard</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">$1,000 statutory + actual + fees</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">1 year</div></div>
+        </div>
+        <p>Rosenthal defines "debt collector" to include persons collecting on behalf of <strong>themselves or others</strong> — which reaches original creditors. California Civil Code §1788.17 directly imports FDCPA §§1692b–1692j and makes them enforceable under state law.</p>
+        <div class="cite-block">Cal. Civil Code §1788.17 — Every debt collector collecting or attempting to collect a consumer debt shall comply with 15 U.S.C. §§1692b–1692j and is subject to the remedies in §1692k.</div>
+        <p>Written notice stops contact obligations under both the Rosenthal/FDCPA import and the TCPA. Our attorney representation notice at enrollment triggers Rosenthal protections for original creditors — the gap federal FDCPA leaves open.</p>
+        <div class="alert success"><div class="alert-i">★</div><p><strong>Filing strategy:</strong> File Rosenthal + federal FDCPA for every CA third-party case. Use Rosenthal as the primary conduct hook for original creditor cases. Layer TCPA on top for any automated calls. Three statutes, one client.</p></div>
+      </div>
+
+      <!-- TX -->
+      <div class="sdc" id="sdc-tx">
+        <div class="sdc-ey t1">Tier 1 — Confirmed original creditor coverage</div>
+        <div class="sdc-title">Texas</div>
+        <div class="sdc-statute">Texas Debt Collection Act · Tex. Fin. Code §§392.001–392.404</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">$100–$500 statutory + actual + fees; DTPA may add 3×</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">2 years (longer than federal)</div></div>
+        </div>
+        <p>The TDCA applies to "debt collectors" defined as any person who directly or indirectly engages in debt collection — Texas courts have consistently extended this to original creditors. The TDCA has its own prohibited conduct list beyond the federal floor.</p>
+        <p>Texas also allows TDCA claims to be brought alongside Texas DTPA (Deceptive Trade Practices Act) claims, which can treble damages in cases involving knowing or intentional violations — meaningful additional leverage in egregious cases.</p>
+        <div class="alert info"><div class="alert-i">ℹ</div><p><strong>Note:</strong> Texas's 2-year SOL is more favorable than the federal 1-year clock. Clients who enrolled late may still have live Texas claims where the federal claim is time-barred.</p></div>
+      </div>
+
+      <!-- FL -->
+      <div class="sdc" id="sdc-fl">
+        <div class="sdc-ey t1">Tier 1 — Confirmed original creditor coverage</div>
+        <div class="sdc-title">Florida</div>
+        <div class="sdc-statute">Florida Consumer Collection Practices Act · Fla. Stat. §§559.55–559.785</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">$1,000 statutory + actual + <strong>punitive available</strong></div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">2 years</div></div>
+        </div>
+        <p>The FCCPA covers any person collecting a consumer debt — including original creditors — and is one of the most powerful state statutes in our portfolio. Its unique feature: <strong>punitive damages are available</strong> for egregious conduct, which the federal FDCPA does not allow.</p>
+        <p>Florida cases with a strong harassment or bad-faith record have materially higher exposure than the federal statute alone would produce. The punitive damages possibility meaningfully changes settlement leverage.</p>
+        <div class="alert success"><div class="alert-i">★</div><p><strong>Priority state:</strong> Florida + federal FDCPA + TCPA is one of the strongest three-statute stacks in our 26-state footprint. Original creditor harassment cases in Florida should always include FCCPA analysis.</p></div>
+      </div>
+
+      <!-- NC -->
+      <div class="sdc" id="sdc-nc">
+        <div class="sdc-ey t1">Tier 1 — Confirmed original creditor coverage</div>
+        <div class="sdc-title">North Carolina</div>
+        <div class="sdc-statute">NC Debt Collection Act · N.C. Gen. Stat. §§75-50–75-56</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">$500–$4,000 per violation + actual + fees</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">4 years under UDAP</div></div>
+        </div>
+        <p>The NCDCA broadly covers any person engaged in collecting consumer debts, including original creditors. It mirrors FDCPA prohibitions on harassment, false representations, and unfair practices with its own prohibited conduct list.</p>
+        <p>North Carolina's UDAP statute (N.C. Gen. Stat. §75-1.1) can be filed alongside NCDCA claims, and UDAP violations carry <strong>mandatory treble damages</strong> — making NC one of the highest-ceiling states in the portfolio for egregious conduct.</p>
+        <div class="alert info"><div class="alert-i">ℹ</div><p>The UDAP trebling is mandatory, not discretionary — if you establish a UDAP violation, the court must award 3× damages. This is a significant feature of NC cases.</p></div>
+      </div>
+
+      <!-- MI -->
+      <div class="sdc" id="sdc-mi">
+        <div class="sdc-ey t1">Tier 1 — Confirmed original creditor coverage</div>
+        <div class="sdc-title">Michigan</div>
+        <div class="sdc-statute">Regulation of Collection Practices Act · MCL §§445.251–445.266</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">$50–$150 per violation + actual + fees</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">6 years</div></div>
+        </div>
+        <p>Michigan's RCPA applies broadly to collection of consumer debts and covers original creditors. The per-violation statutory damages are lower than some states, but Michigan's 6-year SOL is one of the longest in the country — making it viable for older conduct patterns that would be time-barred elsewhere.</p>
+        <p>Michigan also has the Michigan Consumer Protection Act as a potential companion claim in cases involving deceptive conduct.</p>
+      </div>
+
+      <!-- MA -->
+      <div class="sdc" id="sdc-ma">
+        <div class="sdc-ey t1">Tier 1 — Confirmed original creditor coverage</div>
+        <div class="sdc-title">Massachusetts</div>
+        <div class="sdc-statute">AG Debt Collection Regulations · 940 CMR 7.00</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">Actual + fees; Ch. 93A may add 2–3×</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">4 years under Ch. 93A</div></div>
+        </div>
+        <p>Massachusetts regulates debt collection conduct through AG regulations (940 CMR 7.00), which apply to any creditor collecting a consumer debt — including original creditors. Massachusetts also has specific call frequency limits that go beyond Regulation F's 7-in-7 presumption.</p>
+        <p>Massachusetts Chapter 93A (consumer protection statute) can be filed alongside 940 CMR claims and allows 2–3× damages for knowing or willful violations — a powerful multiplier. Verify current AG guidance before filing.</p>
+        <div class="alert warn"><div class="alert-i">!</div><p><strong>Pre-suit notice required:</strong> Chapter 93A claims require a 30-day pre-suit demand letter before filing. Failure to send it is a procedural bar to the claim. Build this into your Massachusetts protocol.</p></div>
+      </div>
+
+      <!-- WI -->
+      <div class="sdc" id="sdc-wi">
+        <div class="sdc-ey t1">Tier 1 — Confirmed original creditor coverage</div>
+        <div class="sdc-title">Wisconsin</div>
+        <div class="sdc-statute">Wisconsin Consumer Act · Wis. Stat. §§422.201–427.105</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">$100–$1,000 statutory + actual + fees</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">1 year</div></div>
+        </div>
+        <p>The WCA applies to creditors and debt collectors collecting consumer credit transactions originated in Wisconsin — which reaches original creditors. It has its own restrictions on collection communications, prohibited practices, and private right of action.</p>
+        <p>File WCA alongside FDCPA for third-party collector cases; use as the primary conduct hook for original creditor cases in Wisconsin where federal FDCPA doesn't reach.</p>
+      </div>
+
+      <!-- PA -->
+      <div class="sdc" id="sdc-pa">
+        <div class="sdc-ey t1">Tier 1 — Confirmed original creditor coverage</div>
+        <div class="sdc-title">Pennsylvania</div>
+        <div class="sdc-statute">Fair Credit Extension Uniformity Act · 73 P.S. §§2270.1–2270.6</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">$100 statutory + actual + fees; UTPCPL may add 3×</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">2 years</div></div>
+        </div>
+        <p>Pennsylvania's FCEUA incorporates FDCPA provisions and applies them to any person collecting a consumer debt — including original creditors. It is an underutilized state statute that can meaningfully extend the reach of cases in our portfolio.</p>
+        <p>Pennsylvania Unfair Trade Practices and Consumer Protection Law (UTPCPL) can be filed alongside FCEUA and allows treble damages for intentional violations. File FCEUA + UTPCPL + TCPA for strong PA cases.</p>
+      </div>
+
+      <!-- MD -->
+      <div class="sdc" id="sdc-md">
+        <div class="sdc-ey t1">Tier 1 — Confirmed original creditor coverage</div>
+        <div class="sdc-title">Maryland</div>
+        <div class="sdc-statute">Maryland Consumer Debt Collection Act · Md. Code, Com. Law §§14-201–14-204</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">Actual + fees; MCPA may add $500–$1,000 statutory</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">3 years</div></div>
+        </div>
+        <p>The MCDCA has its own prohibited conduct list and contact restrictions that cover original creditors. The Maryland Consumer Protection Act (MCPA) is frequently filed alongside MCDCA and adds statutory damages of $500–$1,000 per violation plus attorney fees.</p>
+        <p>Maryland's 3-year SOL is more favorable than the federal 1-year clock for FDCPA. Stack MCDCA + MCPA + TCPA for Maryland original creditor cases.</p>
+      </div>
+
+      <!-- OR -->
+      <div class="sdc" id="sdc-or">
+        <div class="sdc-ey t1">Tier 1 — Confirmed original creditor coverage</div>
+        <div class="sdc-title">Oregon</div>
+        <div class="sdc-statute">Unlawful Debt Collection Practices Act · ORS §§646.639–646.656</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">$200–$1,000 statutory + actual + fees</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv yes">Yes</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">1 year</div></div>
+        </div>
+        <p>Oregon's statute is broader than many states — it applies to any person collecting a consumer debt and has specific provisions on harassment and prohibited contact that cover original creditors. Written notice mechanism applies and creates stop-contact obligations.</p>
+        <p>Oregon also has a strong Unlawful Trade Practices Act (UTPA) that may be available as a companion claim in cases involving deceptive conduct.</p>
+      </div>
+
+      <!-- NY -->
+      <div class="sdc" id="sdc-ny">
+        <div class="sdc-ey t2">Tier 2 — Investigate before relying</div>
+        <div class="sdc-title">New York</div>
+        <div class="sdc-statute">GBL §601 + NYC Admin. Code §20-489 et seq.</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv partial">Partial — varies by provision</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">$1,000 statutory + actual + fees (NYC rules add more)</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv partial">Depends on provision</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">3 years under GBL</div></div>
+        </div>
+        <p>New York GBL §601 covers certain collection conduct. For NYC clients specifically, the Department of Consumer and Worker Protection rules create additional prohibited conduct layers. Third-party collector cases in NY often stack GBL §601 + federal FDCPA + TCPA.</p>
+        <p>Original creditor coverage under GBL §601 is less settled than the Tier 1 states — some provisions apply, others don't. Verify with NY counsel before relying on GBL §601 as the primary hook for original creditor conduct.</p>
+        <div class="alert warn"><div class="alert-i">!</div><p>NYC clients have the strongest protections due to local rules. Out-of-NYC New York clients should be analyzed primarily under GBL §601 + TCPA.</p></div>
+      </div>
+
+      <!-- CO -->
+      <div class="sdc" id="sdc-co">
+        <div class="sdc-ey t2">Tier 2 — Investigate before relying</div>
+        <div class="sdc-title">Colorado</div>
+        <div class="sdc-statute">Colorado Fair Debt Collection Practices Act · C.R.S. §§5-16-101 et seq.</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv verify">Verify — unsettled</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">Mirrors federal FDCPA structure</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv partial">Likely yes — verify</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">1 year</div></div>
+        </div>
+        <p>Colorado has its own Fair Debt Collection Practices Act that largely mirrors the federal statute. Whether it extends to original creditors depends on how Colorado courts interpret the "debt collector" definition — this is less settled than the Tier 1 states. Research current Colorado case law before relying on this as an original creditor hook. For third-party collector cases, CO FDCPA + federal FDCPA + TCPA is a standard stack.</p>
+      </div>
+
+      <!-- WA -->
+      <div class="sdc" id="sdc-wa">
+        <div class="sdc-ey t2">Tier 2 — Investigate before relying</div>
+        <div class="sdc-title">Washington</div>
+        <div class="sdc-statute">Collection Agency Act + Consumer Protection Act · RCW §§19.16, 19.86</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv verify">Verify — may be limited to agencies</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">CPA: actual + treble up to $25K + fees</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv partial">Under CPA — investigate</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">4 years under CPA</div></div>
+        </div>
+        <p>Washington's Collection Agency Act may be limited to licensed collection agencies — which may not reach original creditors. However, Washington's Consumer Protection Act (CPA) is broader and may support claims for unfair or deceptive debt collection conduct including by original creditors. The CPA's treble damages up to $25,000 is a significant feature if available. Verify with Washington counsel before building this into a case strategy.</p>
+      </div>
+
+      <!-- CT -->
+      <div class="sdc" id="sdc-ct">
+        <div class="sdc-ey t2">Tier 2 — Investigate before relying</div>
+        <div class="sdc-title">Connecticut</div>
+        <div class="sdc-statute">Creditors' Collection Practices Act · Conn. Gen. Stat. §§36a-645 et seq.</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv verify">Verify — definition-dependent</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">Actual + fees; CUTPA may add punitive</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv partial">Likely — verify</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">Verify</div></div>
+        </div>
+        <p>Connecticut's CCPA and the Connecticut Unfair Trade Practices Act (CUTPA) provide potential hooks for debt collection conduct. CUTPA allows punitive damages in egregious cases. Whether original creditors are covered depends on how the "creditor" definition in the CCPA applies — verify before relying on this as a primary original creditor theory.</p>
+      </div>
+
+      <!-- MN -->
+      <div class="sdc" id="sdc-mn">
+        <div class="sdc-ey t2">Tier 2 — Investigate before relying</div>
+        <div class="sdc-title">Minnesota</div>
+        <div class="sdc-statute">Minnesota Debt Collection Act · Minn. Stat. §§332.31 et seq.</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv verify">Verify — may require licensing</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">Actual + fees</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv partial">Likely — verify</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">6 years under general statute</div></div>
+        </div>
+        <p>Minnesota's debt collection statute may be limited to entities that are licensed as collection agencies under state law, which may exclude original creditors. The Minnesota Consumer Fraud Act may provide an alternative path for deceptive conduct. Minnesota's general statute of limitations is favorable. Verify current scope with Minnesota counsel before building this into protocol.</p>
+      </div>
+
+      <!-- HI -->
+      <div class="sdc" id="sdc-hi">
+        <div class="sdc-ey t2">Tier 2 — Investigate before relying</div>
+        <div class="sdc-title">Hawaii</div>
+        <div class="sdc-statute">Hawaii Unfair or Deceptive Acts or Practices Law · HRS §§480 et seq.</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv verify">Verify — UDAP-based</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">Actual; treble under UDAP</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv partial">Investigate</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">4 years under UDAP</div></div>
+        </div>
+        <p>Hawaii does not have a dedicated debt collection statute comparable to the federal FDCPA. Debt collection claims in Hawaii typically go through the state's Unfair or Deceptive Acts or Practices law (UDAP), which may reach original creditor conduct as an unfair practice. UDAP allows treble damages. TCPA remains the primary weapon for original creditor cases in Hawaii.</p>
+      </div>
+
+      <!-- IL -->
+      <div class="sdc" id="sdc-il">
+        <div class="sdc-ey t3">Tier 3 — Limited or uncertain coverage</div>
+        <div class="sdc-title">Illinois</div>
+        <div class="sdc-statute">Collection Agency Act · 225 ILCS 425; Consumer Fraud Act · 815 ILCS 505</div>
+        <div class="sdc-pills">
+          <div class="sdc-pill"><div class="sdc-pl">Original creditors covered?</div><div class="sdc-pv no">Likely no under CAA</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Damages</div><div class="sdc-pv">ICFA: actual + punitive + fees</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Written notice stops calls?</div><div class="sdc-pv no">Limited under CAA</div></div>
+          <div class="sdc-pill"><div class="sdc-pl">Statute of limitations</div><div class="sdc-pv">3 years under ICFA</div></div>
+        </div>
+        <p>Illinois's Collection Agency Act is generally limited to licensed collection agencies — which means original creditors are likely excluded. For original creditor cases in Illinois, TCPA is your primary weapon. The Illinois Consumer Fraud and Deceptive Business Practices Act (ICFA) may provide a path for particularly deceptive conduct, but it is not a clean analog to the FDCPA structure.</p>
+        <p>For third-party collector cases in Illinois: file federal FDCPA + ICFA + TCPA. The ICFA's punitive damages availability makes it worth including for egregious conduct even without a strong state FDCPA equivalent.</p>
+        <div class="alert danger"><div class="alert-i">⚠</div><p><strong>Original creditor cases in Illinois:</strong> Lead with TCPA, not state law. The state-law gap here is real — TCPA is your best tool for original creditor conduct in this state.</p></div>
+      </div>
+    </div>
+  </div><!-- /state-explorer -->
+
+  <h2>What to verify for every state before filing</h2>
+  <p>Some states merely resemble the FDCPA. Some incorporate it directly. Some have entirely independent rules. Before opening any state-law claim:</p>
+  <ul class="ck">
+    <li>Does the statute cover original creditors, or only third-party collectors?</li>
+    <li>What is the damages structure — per case cap, per violation stacking, treble, or punitive available?</li>
+    <li>Is there a pre-suit notice requirement? (Massachusetts Chapter 93A requires a 30-day demand letter — failure to send is a bar to the claim)</li>
+    <li>Are there additional prohibited conduct rules beyond the federal FDCPA list?</li>
+    <li>What is the state statute of limitations? Several states are more favorable than the federal 1-year clock.</li>
+    <li>Does the state have licensing requirements for collectors that could create additional violation hooks?</li>
+    <li>Are there state-specific call frequency limits beyond Regulation F's 7-in-7 presumption?</li>
+  </ul>
+
+  <div class="alert success">
+    <div class="alert-i">★</div>
+    <p><strong>Next build:</strong> A compact quick-reference table covering all 26 of our states in a single scannable grid — original creditors covered (yes/no), damages ceiling, SOL, and any pre-suit flag. Intake's cheat sheet the moment a client's state is confirmed.</p>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     INTAKE CHECKLIST
+═══════════════════════════════════════════════════════ -->
+<div id="page-intake" class="page">
+  <div class="eyebrow">Internal — UA Law</div>
+  <div class="pg-title">Client Intake Checklist</div>
+  <div class="pg-sub">Use at enrollment to identify potential FDCPA, TCPA, and Rosenthal violations. The more boxes checked, the stronger the case.</div>
+
+  <div class="alert info"><div class="alert-i">ℹ</div><p>Internal training and intake screening tool only. Not legal advice. Does not constitute attorney-client communications.</p></div>
+
+  <h2>Step 1 — Confirm which statutes apply</h2>
+  <ul class="ck">
+    <li>Debt is consumer (personal/family/household) — not business or commercial</li>
+    <li>If caller is a third-party collector, debt buyer, or collection firm → FDCPA applies</li>
+    <li>If caller is the original creditor under their own name → FDCPA likely does NOT apply; pivot to TCPA + Rosenthal</li>
+    <li>California client? → Add Rosenthal analysis regardless of collector type</li>
+    <li>Are calls automated, prerecorded, or AI voice? → TCPA applies to everyone including original creditors</li>
+  </ul>
+
+  <h2>Step 2 — §1692g validation notice violations</h2>
+  <ul class="ck">
+    <li>Did client receive a written validation notice within 5 days of first contact?</li>
+    <li>If yes — did the notice contain all 5 required elements?</li>
+    <li>Was the dispute right "overshadowed" by urgent short-deadline payment demands?</li>
+    <li>Has client sent a written dispute? If yes, did collection stop immediately?</li>
+    <li>Did the collector resume collection before mailing verification?</li>
+  </ul>
+
+  <h2>Step 3 — Communication violations §1692c</h2>
+  <ul class="ck">
+    <li>Send attorney representation notice Day 1 — date-stamp delivery. All direct consumer contact after that is a violation.</li>
+    <li>Any calls before 8:00 AM or after 9:00 PM in the client's time zone?</li>
+    <li>Any calls to the workplace after client requested otherwise?</li>
+    <li>Any contact with third parties that revealed the existence of the debt?</li>
+  </ul>
+
+  <h2>Step 4 — TCPA analysis</h2>
+  <ul class="ck">
+    <li>Signs of autodialer: dead air before agent speaks, identical robotic opener, rapid-fire call cadence?</li>
+    <li>Any prerecorded or AI-voice messages or voicemails?</li>
+    <li>Any automated texts (short code, instant response, identical message strings)?</li>
+    <li>Did client ever verbally say "stop calling"? On a recorded line? Document date.</li>
+    <li>Has attorney representation notice been sent? (Strongest consent revocation — count every call after that date)</li>
+    <li>Count total calls after first revocation — each post-revocation autodialed call = $500–$1,500</li>
+    <li>If debt was sold/assigned: treat consent chain as a discovery issue — do not assume consent is broken, but document who obtained it and whether revocation occurred</li>
+    <li>Is the caller a vendor or call center acting on behalf of the creditor? Vicarious liability may apply to the creditor.</li>
+  </ul>
+
+  <h2>Step 5 — Harassment and false statements §1692d/e</h2>
+  <ul class="ck">
+    <li>More than 7 calls in any 7-day period? (Regulation F presumption of harassment)</li>
+    <li>Any calls within 7 days of an actual conversation? (Second Regulation F presumption)</li>
+    <li>Any threats of arrest, criminal prosecution, or wage garnishment before a judgment?</li>
+    <li>Any claim that the caller is an attorney when they are not?</li>
+    <li>Any fees or interest added beyond what the original agreement permits?</li>
+    <li>Any failure to identify as a debt collector in initial communication?</li>
+  </ul>
+
+  <h2>Step 6 — Documentation to collect</h2>
+  <ul class="ck">
+    <li>Full call log from client's phone carrier (incoming calls with exact dates and times)</li>
+    <li>All written letters, emails, or notices received from the collector</li>
+    <li>All voicemails saved — do not delete, note whether prerecorded or live</li>
+    <li>Screenshots of any texts including short-code messages</li>
+    <li>Copy of original credit agreement if available</li>
+    <li>Account statements showing balance vs. what the collector is demanding</li>
+    <li>Date of attorney representation notice and confirmed delivery method</li>
+    <li>Any prior verbal revocations the client made — dates, phone numbers called, what they said</li>
+  </ul>
+
+  <h2>Case strength triage — where to focus referral energy</h2>
+  <p>Not every intake item is equal. Use this triage to prioritize which cases move to litigation screening versus which need more investigation versus which are unlikely to generate a standalone claim.</p>
+
+  <div style="background:var(--green-light);border-left:4px solid var(--green);border-radius:9px;padding:18px 20px;margin:14px 0">
+    <div style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px">🟢 Green — Strong Referral</div>
+    <ul style="list-style:none;margin:0">
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">Post-revocation prerecorded, artificial voice, or AI voice calls — documented date of revocation and calls after</li>
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">Any direct contact with the client after attorney representation notice by a third-party collector</li>
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">Written §1692g dispute followed by continued collection before verification was mailed</li>
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">CRA dispute followed by furnisher rubber-stamp verification (results in hours or days, dispute not actually investigated)</li>
+      <li style="padding:5px 0;font-size:13px;color:var(--gray-700)">Re-aging — wrong or reset date of first delinquency reported by debt buyer</li>
+    </ul>
+  </div>
+
+  <div style="background:var(--amber-light);border-left:4px solid var(--amber);border-radius:9px;padding:18px 20px;margin:14px 0">
+    <div style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:10px">🟡 Yellow — Investigate Before Referring</div>
+    <ul style="list-style:none;margin:0">
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">Dead air / pause before agent speaks, or suspected predictive dialer — not ATDS proof after Duguid, needs investigation</li>
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">Automated texts — investigate: short code? bulk platform? identical scripts? auto-response? confirm ATDS theory</li>
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">Original creditor calls in a non-California state — check state mirror law before concluding no claim</li>
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">Debt buyer consent chain — unclear whether consent was obtained and by whom; flag for discovery</li>
+      <li style="padding:5px 0;font-size:13px;color:var(--gray-700)">Credit reporting during debt relief enrollment — only a claim if specific inaccuracy exists and dispute has been sent</li>
+    </ul>
+  </div>
+
+  <div style="background:var(--red-light);border-left:4px solid var(--red);border-radius:9px;padding:18px 20px;margin:14px 0">
+    <div style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px">🔴 Red — Probably Weak Alone</div>
+    <ul style="list-style:none;margin:0">
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">Manual human call after TCPA revocation with no FDCPA or Rosenthal hook — difficult to establish TCPA without automated technology</li>
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">"They called a lot" — without call logs, dates, specific debt, and collector identity, this is background noise not a case</li>
+      <li style="padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--gray-700)">FCRA issue without a prior CRA dispute — no dispute, no §1681s-2(b) claim; the dispute is the trigger</li>
+      <li style="padding:5px 0;font-size:13px;color:var(--gray-700)">Credit report shows accurate charge-off history — unpleasant but legally reported; do not generate false hope</li>
+    </ul>
+  </div>
+
+  <div style="background:var(--navy);border-radius:11px;padding:24px 28px;margin:28px 0">
+    <div style="font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Final Operating Doctrine — UA Law</div>
+    <div style="font-size:14px;color:rgba(255,255,255,.85);line-height:1.9">
+      <strong style="color:var(--gold-light)">FDCPA asks</strong> <span style="color:rgba(255,255,255,.65)">who is collecting.</span><br>
+      <strong style="color:var(--gold-light)">TCPA asks</strong> <span style="color:rgba(255,255,255,.65)">how they contacted the client and whether valid consent still existed.</span><br>
+      <strong style="color:var(--gold-light)">Rosenthal / state law asks</strong> <span style="color:rgba(255,255,255,.65)">whether state rules expand the playing field beyond what federal FDCPA reaches.</span><br>
+      <strong style="color:var(--gold-light)">FCRA asks</strong> <span style="color:rgba(255,255,255,.65)">whether credit reporting was inaccurate and whether the dispute process was mishandled.</span><br><br>
+      <span style="color:rgba(255,255,255,.5);font-style:italic">Do not diagnose from one fact. Diagnose from the stack:</span><br>
+      <span style="color:rgba(255,255,255,.75)">Actor · Technology · Consent · Revocation · Representation · State · Debt type · Dispute history · Proof</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FCRA
+═══════════════════════════════════════════════════════ -->
+<div id="page-fcra" class="page">
+  <div class="eyebrow">FCRA — 15 U.S.C. §1681 et seq.</div>
+  <div class="pg-title">Fair Credit Reporting Act</div>
+  <div class="pg-sub">The FCRA governs who can access consumer credit reports, what information can be reported, and what happens when that information is wrong. Unlike the FDCPA, violations can come from three different actors — and the statute, the duties, and the damages path depend on <em>which actor</em> failed.</div>
+
+  <!-- SECONDARY TABS -->
+  <div class="ft-nav">
+    <div class="ft-tab active" onclick="fcra('overview',this)">Overview</div>
+    <div class="ft-tab" onclick="fcra('furnisher',this)">Furnisher Rules <span style="font-family:var(--fm);font-size:9px;opacity:.6">§1681s-2</span></div>
+    <div class="ft-tab" onclick="fcra('cra',this)">CRA Duties <span style="font-family:var(--fm);font-size:9px;opacity:.6">§1681e/i</span></div>
+    <div class="ft-tab" onclick="fcra('consumer',this)">Consumer Rights <span style="font-family:var(--fm);font-size:9px;opacity:.6">§1681c/m</span></div>
+    <div class="ft-tab" onclick="fcra('damages',this)">Damages <span style="font-family:var(--fm);font-size:9px;opacity:.6">§1681n/o</span></div>
+  </div>
+
+  <!-- ─────────── TAB 1: OVERVIEW ─────────── -->
+  <div id="fcra-overview" class="ft-pane active">
+
+    <div class="stats">
+      <div class="stat"><span class="v">$1,000</span><span class="l">Statutory per willful violation</span></div>
+      <div class="stat"><span class="v">2 / 5 yr</span><span class="l">SOL — discovery / occurrence</span></div>
+      <div class="stat"><span class="v">3 actors</span><span class="l">Consumer · Furnisher · CRA</span></div>
+    </div>
+
+    <div class="hero-callout">
+      <div class="hc-ey">Why FCRA matters for debt relief clients</div>
+      <div class="hc-title">The debt they enrolled is almost certainly being reported. How it's being reported — and whether that reporting is accurate — is a separate set of claims.</div>
+      <div class="hc-body">Creditors and collectors who report inaccurate information to the credit bureaus — or who fail to investigate and correct it after a dispute — are <strong>furnisher violations</strong> under §1681s-2(b). These create a private right of action independent of FDCPA claims. Every debt relief client is a potential FCRA client. The enrollment conversation is the natural screening moment.</div>
+    </div>
+
+    <h2>The three-actor framework</h2>
+    <p>Every FCRA claim sits at the intersection of three parties. Understanding who failed — and at which step — determines which section of the statute applies and what the damages path looks like.</p>
+
+    <div class="actor-grid">
+      <div class="actor-card navy" onclick="fcra('furnisher',document.querySelectorAll('.ft-tab')[1])">
+        <div class="ac-ico">🏦</div>
+        <div class="ac-title">Furnisher</div>
+        <div class="ac-sub">Creditors, collectors, and debt buyers who report account data to the bureaus. If they report inaccurate info or fail to investigate a dispute — that's a §1681s-2(b) violation. Click to see furnisher rules →</div>
+      </div>
+      <div class="actor-card blue" onclick="fcra('cra',document.querySelectorAll('.ft-tab')[2])">
+        <div class="ac-ico">📊</div>
+        <div class="ac-title">CRA</div>
+        <div class="ac-sub">Equifax, Experian, TransUnion. Must maintain maximum possible accuracy, forward disputes to furnishers within 5 days, and delete unverified info after 30 days. Click →</div>
+      </div>
+      <div class="actor-card green" onclick="fcra('consumer',document.querySelectorAll('.ft-tab')[3])">
+        <div class="ac-ico">👤</div>
+        <div class="ac-title">Consumer</div>
+        <div class="ac-sub">Has a right to dispute inaccurate info, receive adverse action notices, add 100-word statements, and request security freezes. The dispute letter is step one in the litigation path. Click →</div>
+      </div>
+    </div>
+
+    <h2>The dispute pipeline — how a case is built</h2>
+    <p>FCRA litigation almost always follows the same procedural path. The consumer dispute to the CRA is the trigger that activates furnisher duties — and failure at any step is a violation.</p>
+
+    <div class="dispute-flow">
+      <div class="df-node">
+        <div class="dn-label">Step 1</div>
+        <div class="dn-name">Consumer</div>
+        <div class="dn-sub">Sends dispute letter to CRA identifying the inaccuracy</div>
+      </div>
+      <div class="df-arrow">→<span class="da-lbl">5 days</span></div>
+      <div class="df-node">
+        <div class="dn-label">Step 2</div>
+        <div class="dn-name">CRA</div>
+        <div class="dn-sub">Forwards dispute to furnisher with all relevant info (ACDV)</div>
+      </div>
+      <div class="df-arrow">→<span class="da-lbl">30 days</span></div>
+      <div class="df-node">
+        <div class="dn-label">Step 3</div>
+        <div class="dn-name">Furnisher</div>
+        <div class="dn-sub">Must investigate, correct, and report back to CRA</div>
+      </div>
+      <div class="df-arrow">→<span class="da-lbl">results</span></div>
+      <div class="df-node">
+        <div class="dn-label">Step 4</div>
+        <div class="dn-name">CRA</div>
+        <div class="dn-sub">Updates file or deletes if unverified. Notifies consumer.</div>
+      </div>
+    </div>
+
+    <div class="alert danger">
+      <div class="alert-i">⚠</div>
+      <p><strong>The §1681s-2(b) hook:</strong> There is no private right of action under §1681s-2(a) — the general duty to report accurately. The private lawsuit hook is <strong>§1681s-2(b)</strong> — the furnisher's post-dispute investigation duties. The consumer dispute to the CRA is what activates that duty. Without a dispute, there is no §1681s-2(b) claim.</p>
+    </div>
+
+    <h2>FCRA vs. FDCPA — key differences at a glance</h2>
+    <table>
+      <thead><tr><th>Issue</th><th>FCRA</th><th>FDCPA</th></tr></thead>
+      <tbody>
+        <tr><td>Who can violate it</td><td>CRAs, furnishers, any user of credit info</td><td>Third-party debt collectors only</td></tr>
+        <tr><td>Core subject matter</td><td>Accuracy and handling of credit report data</td><td>Collector conduct and communication</td></tr>
+        <tr><td>What triggers a claim</td><td>Inaccurate reporting + failure to investigate</td><td>Communication violations, harassment, false statements</td></tr>
+        <tr><td>Statutory damages</td><td>$100–$1,000 willful only; $0 for negligent</td><td>Up to $1,000 per case (negligent or willful)</td></tr>
+        <tr><td>Punitive damages</td><td>Available for willful violations (§1681n)</td><td>Not available</td></tr>
+        <tr><td>SOL</td><td>2 yr from discovery / 5 yr from violation</td><td>1 year from violation</td></tr>
+        <tr><td>Original creditors covered</td><td><span class="badge green">Yes — as furnishers</span></td><td><span class="badge red">No</span></td></tr>
+        <tr><td>Class actions available</td><td><span class="badge green">Yes</span></td><td><span class="badge green">Yes (capped)</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert success">
+      <div class="alert-i">★</div>
+      <p><strong>The stacking play:</strong> A third-party collector who is also reporting inaccurately to the bureaus is a TCPA + FDCPA + FCRA defendant. All three statutes operate independently. The credit bureau dispute letter becomes the trigger document that activates FCRA on top of whatever conduct claims already exist.</p>
+    </div>
+
+  </div><!-- /fcra-overview -->
+
+
+  <!-- ─────────── TAB 2: FURNISHER RULES ─────────── -->
+  <div id="fcra-furnisher" class="ft-pane">
+
+    <div class="alert info">
+      <div class="alert-i">ℹ</div>
+      <p><strong>Most important tab for debt relief cases.</strong> Furnisher violations are the primary FCRA claim path for our client profile. Creditors and debt buyers who report inaccurate information after enrollment — or who fail to investigate when disputed — are the most common defendants.</p>
+    </div>
+
+    <h2>The two subsections — and why only one matters for private suits</h2>
+
+    <div class="two-col">
+      <div class="col-card" style="border-color:var(--gray-300)">
+        <div class="cc-head" style="color:var(--gray-500)">§1681s-2(a) — Duty to Report Accurately</div>
+        <ul>
+          <li>Prohibits furnishing info known to be inaccurate</li>
+          <li>Prohibits continuing to report info after being told it is inaccurate</li>
+          <li>Requires correction after furnisher learns of an error</li>
+          <li style="color:var(--red)"><strong>No private right of action</strong> — enforced only by FTC/CFPB and state AGs</li>
+        </ul>
+      </div>
+      <div class="col-card" style="border-color:var(--blue);background:var(--blue-light)">
+        <div class="cc-head" style="color:var(--blue)">§1681s-2(b) — Post-Dispute Investigation Duties ★</div>
+        <ul>
+          <li>Triggered when CRA notifies furnisher of a consumer dispute</li>
+          <li>Must conduct reasonable investigation of the disputed info</li>
+          <li>Must review all relevant info provided by the CRA</li>
+          <li>Must report results back to the CRA</li>
+          <li><strong>Private right of action exists — this is the lawsuit hook</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alert warn">
+      <div class="alert-i">!</div>
+      <p><strong>Direct disputes to furnishers (Regulation V):</strong> Under 16 C.F.R. Part 660 (Reg V), furnishers must also investigate disputes sent <em>directly</em> to them by the consumer — not just disputes routed through a CRA. However, the direct-dispute path to a private lawsuit is less established in most circuits. The CRA-mediated dispute path (§1681i → §1681s-2(b)) remains the cleaner litigation trigger.</p>
+    </div>
+
+    <h2>What a "reasonable investigation" requires</h2>
+    <p>Courts evaluate whether a furnisher's investigation was objectively reasonable given the nature of the dispute. A rubber-stamp verification is not a reasonable investigation. Here is what courts look for:</p>
+
+    <div class="rc open">
+      <div class="rc-h" onclick="rc(this)"><div class="rc-ico req">✓</div><div class="rc-title">Reviewed all information the CRA forwarded with the dispute</div><div class="rc-tog">▾</div></div>
+      <div class="rc-body"><p>The CRA sends an Automated Consumer Dispute Verification (ACDV) form containing the consumer's basis for the dispute. The furnisher must actually review the content — not just check internal records and confirm the balance matches.</p><div class="cite-block">Gorman v. Wolpoff & Abramson — a furnisher who merely checked its own records without considering the consumer's dispute basis did not conduct a reasonable investigation.</div></div>
+    </div>
+
+    <div class="rc open">
+      <div class="rc-h" onclick="rc(this)"><div class="rc-ico req">✓</div><div class="rc-title">Investigated the specific inaccuracy alleged — not just any inaccuracy</div><div class="rc-tog">▾</div></div>
+      <div class="rc-body"><p>If the consumer says the balance is wrong, the furnisher must investigate the balance — not just verify that the account exists. Scope matters. A "verified" response that doesn't address the actual dispute is not reasonable.</p></div>
+    </div>
+
+    <div class="rc open">
+      <div class="rc-h" onclick="rc(this)"><div class="rc-ico req">✓</div><div class="rc-title">Modified, deleted, or permanently blocked inaccurate information</div><div class="rc-tog">▾</div></div>
+      <div class="rc-body"><p>If the investigation finds the information is inaccurate or incomplete, the furnisher must update or delete it and report the result to the CRA. Continuing to report verified-as-inaccurate information after the investigation is a standalone violation.</p></div>
+    </div>
+
+    <div class="rc open">
+      <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Re-insertion of deleted information — requires certification</div><div class="rc-tog">▾</div></div>
+      <div class="rc-body"><p>If a CRA previously deleted information after a dispute, a furnisher can only re-insert it if it certifies the information is complete and accurate. Re-insertion without notice to the consumer is a violation. Unauthorized re-insertion can support a willful violation claim.</p><div class="alert danger"><div class="alert-i">⚠</div><p>Re-aging (reporting an old debt with a new "date of first delinquency") is a separate violation — it restarts the 7-year reporting clock and materially misrepresents the account status. It is common in debt-buyer portfolios.</p></div></div>
+    </div>
+
+    <h2>Common furnisher violations in debt relief portfolios</h2>
+    <table>
+      <thead><tr><th>Violation</th><th>What Happened</th><th>Strength</th></tr></thead>
+      <tbody>
+        <tr><td>Reporting open balance on enrolled debt</td><td>Creditor reports full balance after client enrolled in debt relief — but did not update status or note enrollment</td><td><span class="badge amber">Investigate</span></td></tr>
+        <tr><td>Re-aging the account after debt sale</td><td>Debt buyer restarts the 7-year clock with a new date of first delinquency</td><td><span class="badge green">Strong FCRA</span></td></tr>
+        <tr><td>Rubber-stamp verification after dispute</td><td>Furnisher responds "verified" within 24 hours of receiving ACDV with no actual investigation</td><td><span class="badge green">Strong FCRA</span></td></tr>
+        <tr><td>Continued reporting after dispute + no update</td><td>Investigation found inaccuracy but furnisher never updated the CRA's file</td><td><span class="badge green">Strong FCRA</span></td></tr>
+        <tr><td>Reporting settled debt as "charged off" or "open"</td><td>Settled debt still showing balance owed or derogatory status after settlement confirmed</td><td><span class="badge blue">Stack w/ FDCPA</span></td></tr>
+        <tr><td>Duplicate entries from debt sale</td><td>Both original creditor and debt buyer reporting the same account — double negative</td><td><span class="badge green">Strong FCRA</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="statute">
+      <div class="s-ey">15 U.S.C. §1681s-2(b)(1) — Furnisher Duties After Notification</div>
+      <div class="s-txt">After receiving notice of a dispute from a consumer reporting agency, a furnisher shall: <strong>(A)</strong> conduct an investigation with respect to the disputed information; <strong>(B)</strong> review all relevant information provided by the consumer reporting agency; <strong>(C)</strong> report the results of the investigation to the consumer reporting agency; and <strong>(D)</strong> if the investigation finds that the information is incomplete or inaccurate, report those results to all other consumer reporting agencies.</div>
+    </div>
+
+  </div><!-- /fcra-furnisher -->
+
+
+  <!-- ─────────── TAB 3: CRA DUTIES ─────────── -->
+  <div id="fcra-cra" class="ft-pane">
+
+    <p>The three major CRAs — Equifax, Experian, and TransUnion — operate under a separate but parallel set of duties. CRA claims are typically alongside furnisher claims, not instead of them. A consumer dispute activates duties on both sides simultaneously.</p>
+
+    <h2>Maximum possible accuracy — §1681e(b)</h2>
+
+    <div class="statute">
+      <div class="s-ey">15 U.S.C. §1681e(b)</div>
+      <div class="s-txt">Whenever a consumer reporting agency prepares a consumer report it shall follow <strong>reasonable procedures to assure maximum possible accuracy</strong> of the information concerning the individual about whom the report relates.</div>
+    </div>
+
+    <p>This is a standalone CRA obligation independent of the dispute process. If a CRA reports information it knew — or should have known — to be inaccurate, §1681e(b) applies even without a prior dispute. Common examples:</p>
+
+    <ul class="ck">
+      <li>Reporting a debt that belongs to someone with a similar name (mixed-file error)</li>
+      <li>Reporting an account discharged in bankruptcy as still open or delinquent</li>
+      <li>Reporting an account beyond its 7-year reporting window</li>
+      <li>Reporting an identity theft account after receiving a fraud alert</li>
+    </ul>
+
+    <h2>Reinvestigation duties — §1681i</h2>
+    <p>When a consumer disputes the completeness or accuracy of any item, the CRA must follow a strict procedural path. Failure at any step is an independent violation.</p>
+
+    <div style="margin:20px 0">
+      <div class="obligation-row">
+        <div class="ob-num">1</div>
+        <div class="ob-body">
+          <div class="ob-title">Reinvestigate the disputed item</div>
+          <div class="ob-detail">The CRA cannot simply accept the furnisher's verification at face value — it must conduct its own reasonable reinvestigation. Free-of-charge.</div>
+        </div>
+        <div class="ob-timer">Free to consumer</div>
+      </div>
+      <div class="obligation-row">
+        <div class="ob-num">2</div>
+        <div class="ob-body">
+          <div class="ob-title">Forward dispute to the furnisher within 5 business days</div>
+          <div class="ob-detail">Must provide the furnisher with all relevant information it received from the consumer. Failure to forward the full dispute (just sending an automated code) may be a procedural violation.</div>
+        </div>
+        <div class="ob-timer">5 business days</div>
+      </div>
+      <div class="obligation-row">
+        <div class="ob-num">3</div>
+        <div class="ob-body">
+          <div class="ob-title">Complete reinvestigation within 30 days</div>
+          <div class="ob-detail">Extended to 45 days if the consumer provides additional information during the reinvestigation period. A dispute sent during the free annual report period also gets 45 days.</div>
+        </div>
+        <div class="ob-timer">30–45 days</div>
+      </div>
+      <div class="obligation-row">
+        <div class="ob-num">4</div>
+        <div class="ob-body">
+          <div class="ob-title">Delete or modify information that cannot be verified</div>
+          <div class="ob-detail">If the furnisher fails to respond or cannot verify the information, the CRA must delete or correct it. "Unable to verify" = delete. The CRA cannot leave unverified items on the report.</div>
+        </div>
+        <div class="ob-timer">Must delete</div>
+      </div>
+      <div class="obligation-row">
+        <div class="ob-num">5</div>
+        <div class="ob-body">
+          <div class="ob-title">Notify consumer of results and provide free updated report</div>
+          <div class="ob-detail">Must tell the consumer the result of the reinvestigation in writing. Must provide a free copy of the report if changes were made.</div>
+        </div>
+        <div class="ob-timer">Written notice</div>
+      </div>
+    </div>
+
+    <h2>Mixed-file errors — highest-severity CRA violations</h2>
+
+    <div class="alert danger">
+      <div class="alert-i">⚠</div>
+      <p><strong>Mixed files</strong> occur when a CRA merges credit data from two different consumers — typically people with similar names, SSNs, or addresses — onto a single report. These are among the most damaging FCRA violations because the consumer's file contains someone else's negative history and the harm is immediate. Mixed-file cases often support punitive damages claims because CRAs are well aware of the problem and have been put on notice.</p>
+    </div>
+
+    <h2>Reporting window limits — §1681c</h2>
+    <table>
+      <thead><tr><th>Item Type</th><th>Maximum Reporting Period</th><th>Clock Starts</th></tr></thead>
+      <tbody>
+        <tr><td>Most negative information (charge-offs, collections, lates)</td><td>7 years</td><td>Date of first delinquency on the account</td></tr>
+        <tr><td>Chapter 7 bankruptcy</td><td>10 years</td><td>Date filed</td></tr>
+        <tr><td>Chapter 13 bankruptcy</td><td>7 years</td><td>Date filed</td></tr>
+        <tr><td>Unpaid judgments</td><td>7 years or SOL on judgment (whichever is longer)</td><td>Date entered</td></tr>
+        <tr><td>Tax liens</td><td>7 years from payment; unpaid may remain longer</td><td>Date filed / paid</td></tr>
+        <tr><td>Inquiries (hard pulls)</td><td>2 years</td><td>Date of inquiry</td></tr>
+        <tr><td>Positive accounts</td><td>Indefinitely</td><td>N/A</td></tr>
+      </tbody>
+    </table>
+
+  </div><!-- /fcra-cra -->
+
+
+  <!-- ─────────── TAB 4: CONSUMER RIGHTS ─────────── -->
+  <div id="fcra-consumer" class="ft-pane">
+
+    <p>These are the rights the consumer holds independently of any litigation claim. Understanding them lets intake staff explain the process correctly and build rapport — and the dispute letter is step one in any FCRA case.</p>
+
+    <h2>Free annual credit report — §1681j</h2>
+    <div class="keybox">
+      <div class="keybox-icon">📋</div>
+      <div class="keybox-body">
+        <div class="keybox-title">AnnualCreditReport.com — the only authorized free source</div>
+        <p>Each consumer is entitled to one free credit report from each of the three major CRAs per 12 months through AnnualCreditReport.com. During COVID, weekly free reports became available; that policy has been extended periodically. Free reports are also available after an adverse action, during active fraud alert, if unemployed and seeking employment, or if receiving public assistance.</p>
+      </div>
+    </div>
+
+    <h2>Right to dispute — the litigation trigger</h2>
+    <p>A consumer may dispute any information they believe to be inaccurate or incomplete. The dispute letter is the single most important document in an FCRA case — it triggers the CRA's §1681i duties and the furnisher's §1681s-2(b) duties simultaneously.</p>
+
+    <div class="script-box">
+      <div class="s-label">Dispute letter essentials — what must be included</div>
+      <div class="s-text">Identity: full name, address, SSN, date of birth — and a copy of a government ID. Identify each disputed item specifically — creditor name, account number, what is wrong, and why. State the relief sought: correction, deletion, or suppression. Send via certified mail, return receipt requested. Keep every copy.</div>
+    </div>
+
+    <div class="alert warn">
+      <div class="alert-i">!</div>
+      <p><strong>Credit repair organization rules apply:</strong> If UA Law is assisting consumers with the dispute letter process, be aware that the Credit Repair Organizations Act (CROA) may impose disclosure and contract requirements. Confirm with supervising counsel that the representation structure complies. Advice from a licensed attorney is exempt from most CROA requirements — the arrangement must be structured correctly.</p>
+    </div>
+
+    <h2>Adverse action notice — §1681m</h2>
+    <p>Any person who takes an adverse action against a consumer based in whole or in part on a credit report must provide a notice that includes: the name, address, and phone number of the CRA that provided the report; a statement that the CRA did not make the adverse action decision; the consumer's right to obtain a free report within 60 days; and the right to dispute the accuracy of the report.</p>
+
+    <div class="alert warn">
+      <div class="alert-i">!</div>
+      <p><strong>No private right of action under §1681m:</strong> A missing or defective adverse-action notice is a regulatory/compliance violation — but §1681m generally does not create a private damages claim. Document it as part of the factual story and to support actual damages, but do not represent it to clients as a standalone lawsuit. Confirm with supervising counsel before asserting any §1681m-based private claim.</p>
+    </div>
+
+    <table>
+      <thead><tr><th>Who Must Provide It</th><th>Common Triggers</th><th>Use In Litigation</th></tr></thead>
+      <tbody>
+        <tr><td>Lenders (credit denial)</td><td>Loan rejection, credit limit decrease</td><td>Factual damages narrative; supports actual damages claim under other FCRA provisions</td></tr>
+        <tr><td>Landlords</td><td>Rental application denial</td><td>Actual damages evidence — housing denial with documented credit cause</td></tr>
+        <tr><td>Employers</td><td>Job denial, promotion denial, termination</td><td>Must also provide pre-adverse action notice + copy of report; FCRA §1681b(b)(3) — separate private claim path</td></tr>
+        <tr><td>Insurance companies</td><td>Adverse rate or coverage decision</td><td>Regulatory compliance issue; state insurance law may create independent claim</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Security freeze and fraud alert rights — §1681c-1/c-2</h2>
+    <ul class="ck">
+      <li>Consumer may place a free security freeze at all three major CRAs — blocks most new credit inquiries</li>
+      <li>Initial fraud alert: 1-year duration; requires CRAs to notify all other CRAs within 2 days</li>
+      <li>Extended fraud alert: 7 years — requires documentation of identity theft</li>
+      <li>Active duty alert: 1-year — available to military members on active duty</li>
+      <li>CRAs must provide a free credit report when a fraud alert is placed</li>
+    </ul>
+
+    <h2>Consumer's right to add a 100-word statement — §1681i(b)</h2>
+    <p>If a reinvestigation does not resolve the dispute to the consumer's satisfaction, the consumer may file a brief statement — up to 100 words — with the CRA explaining their position on the disputed item. The CRA must include the substance of that statement in future reports and provide it to any party requesting the report. This is not a litigation substitute — it is a consumer protection right — but it creates a contemporaneous record useful in subsequent litigation.</p>
+
+  </div><!-- /fcra-consumer -->
+
+
+  <!-- ─────────── TAB 5: DAMAGES ─────────── -->
+  <div id="fcra-damages" class="ft-pane">
+
+    <div class="alert danger">
+      <div class="alert-i">⚠</div>
+      <p><strong>The FCRA damages trap — most misunderstood issue in consumer protection:</strong> Statutory damages are only available for <em>willful</em> violations. A negligent violation entitles the consumer to actual damages and fees — but zero statutory damages. This is the opposite of what most people assume and is the central damages analysis in every FCRA case.</p>
+    </div>
+
+    <h2>§1681n — Willful Noncompliance</h2>
+
+    <div class="two-col">
+      <div class="col-card willful">
+        <div class="cc-head">Available for Willful Violations</div>
+        <ul>
+          <li>Actual damages (or none if statutory elected)</li>
+          <li>Statutory damages: $100–$1,000 per violation</li>
+          <li>Punitive damages — amount at court's discretion</li>
+          <li>Attorney's fees and costs</li>
+          <li>Class actions: up to $1,000/person or 1% of net worth, capped at $500,000</li>
+        </ul>
+      </div>
+      <div class="col-card negligent">
+        <div class="cc-head">Available for Negligent Violations Only</div>
+        <ul>
+          <li>Actual damages (must prove and quantify)</li>
+          <li><strong>No statutory damages</strong></li>
+          <li><strong>No punitive damages</strong></li>
+          <li>Attorney's fees and costs</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>What makes a violation "willful"</h2>
+    <p>Under <em>Safeco Insurance Co. of America v. Burr</em> (2007), willfulness under the FCRA includes not just knowing violations but also <strong>reckless disregard</strong> of the statute. A furnisher or CRA that adopted a policy with an unjustifiably high risk of violating the FCRA — even if they did not know — can be found to have willfully violated it.</p>
+
+    <div class="rc open">
+      <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Facts supporting willfulness — furnisher</div><div class="rc-tog">▾</div></div>
+      <div class="rc-body">
+        <ul class="ck">
+          <li>Investigation completed in hours or minutes — too fast to be genuine</li>
+          <li>Furnisher's standard policy is to simply match internal records without reviewing the consumer's dispute basis</li>
+          <li>Furnisher previously received identical disputes from other consumers on the same issue (pattern)</li>
+          <li>Re-insertion of previously deleted item without proper certification</li>
+          <li>Continuing to report a debt known to be disputed without notation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rc open">
+      <div class="rc-h" onclick="rc(this)"><div class="rc-ico bad">✗</div><div class="rc-title">Facts supporting willfulness — CRA</div><div class="rc-tog">▾</div></div>
+      <div class="rc-body">
+        <ul class="ck">
+          <li>Mixed-file error involving a known, long-standing data matching problem</li>
+          <li>CRA failed to forward the complete consumer dispute to the furnisher (truncated ACDV)</li>
+          <li>CRA has received regulatory action or prior litigation on the same type of error</li>
+          <li>Automated reinvestigation without any human review of complex disputes</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Statute of limitations — §1681p</h2>
+
+    <div class="stats">
+      <div class="stat"><span class="v">2 yr</span><span class="l">From date of discovery of violation</span></div>
+      <div class="stat"><span class="v">5 yr</span><span class="l">From date violation occurred (outer limit)</span></div>
+      <div class="stat"><span class="v">Longer</span><span class="l">Discovery rule usually controls — document when client found out</span></div>
+    </div>
+
+    <p>The discovery rule means the clock starts when the consumer first knew — or reasonably should have known — about the violation. For credit reporting errors, courts typically look to when the consumer first obtained their credit report showing the inaccuracy. Document this date carefully at intake.</p>
+
+    <h2>Proving actual damages — not automatic</h2>
+    <p>For negligent violations and to support punitive damages in willful cases, actual damages must be proven. Common categories accepted by courts:</p>
+
+    <table>
+      <thead><tr><th>Damage Type</th><th>Examples</th><th>Proof Needed</th></tr></thead>
+      <tbody>
+        <tr><td>Credit denial</td><td>Loan denied, higher interest rate, deposit required</td><td>Adverse action notice, lender's stated reason, rate differential</td></tr>
+        <tr><td>Employment impact</td><td>Job application denied based on credit check</td><td>Employer records, pre-adverse action notice</td></tr>
+        <tr><td>Housing denial</td><td>Rental application rejected</td><td>Landlord's rejection notice citing credit</td></tr>
+        <tr><td>Emotional distress</td><td>Anxiety, humiliation, embarrassment</td><td>Consumer testimony, medical records helpful but not required in all circuits</td></tr>
+        <tr><td>Out-of-pocket losses</td><td>Fees to dispute, lost time from work</td><td>Receipts, time logs</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert success">
+      <div class="alert-i">★</div>
+      <p><strong>FCRA intake priority:</strong> At enrollment, ask every client: (1) Have you applied for credit, housing, or employment in the last 2 years and been denied or received worse terms? (2) Have you pulled your credit report recently? (3) Are any of your enrolled accounts still showing a balance or derogatory status? A "yes" on any of these is the starting point for an FCRA screening referral to litigation.</p>
+    </div>
+
+  </div><!-- /fcra-damages -->
+
+</div><!-- /page-fcra -->
+
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<script>
+const labels = {
+  'tcpa':'TCPA Overview',
+  'fdcpa-overview':'FDCPA Overview',
+  'mirroring':'Mirroring States',
+  'fdcpa-who':'FDCPA — Who Is Covered',
+  'fdcpa-comms':'FDCPA — Communication Rules',
+  'fdcpa-prohibited':'FDCPA — Prohibited Practices',
+  'fdcpa-validation':'FDCPA — Validation of Debts',
+  'fdcpa-damages':'FDCPA — Remedies & Damages',
+  'fcra':'FCRA — 15 U.S.C. §1681',
+  'intake':'Intake Checklist'
+};
+
+function fcra(pane, tabEl) {
+  document.querySelectorAll('#page-fcra .ft-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#page-fcra .ft-tab').forEach(t => t.classList.remove('active'));
+  const el = document.getElementById('fcra-' + pane);
+  if (el) el.classList.add('active');
+  if (tabEl && tabEl.classList) tabEl.classList.add('active');
+  else {
+    // tabEl may be a DOM node passed from actor-card click
+    if (tabEl && tabEl.classList) tabEl.classList.add('active');
+  }
+}
+
+function go(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.ni').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  el.classList.add('active');
+  document.getElementById('bc').textContent = labels[id] || id;
+  window.scrollTo(0, 0);
+}
+
+function rc(h) {
+  h.parentElement.classList.toggle('open');
+}
+
+function showState(id, btn) {
+  document.querySelectorAll('.sdc').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.sb-btn').forEach(b => b.classList.remove('active'));
+  const el = document.getElementById('sdc-' + id);
+  if (el) el.classList.add('active');
+  btn.classList.add('active');
+  const ph = document.getElementById('sd-placeholder');
+  if (ph) ph.style.display = 'none';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+    e.preventDefault();
+    document.getElementById('srch').focus();
+  }
+});
+</script>
+</body>
+</html>
